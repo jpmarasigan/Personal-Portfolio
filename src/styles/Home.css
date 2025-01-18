@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components; 
+@tailwind utilities;
+
+@layer components {
+    .home-section {
+        @apply mx-auto h-screen max-w-[85rem] max-h-[45rem];
+        @apply max-1024:min-h-[40rem] max-1024:max-h-[40rem];
+    }
+
+    .content-container {
+        @apply h-full content-center;
+    }
+
+    .profile-container {
+        @apply flex max-600:h-fit min-1024:relative max-1024:flex-row-reverse items-center h-[28rem] w-full mx-auto mt-12;
+    }
+    
+    .profile-image-container {
+        @apply relative flex items-end justify-center mx-auto h-full bg-customBlack w-[390px] max-1024:h-[80%] max-1024:m-[5%] max-600:hidden shadow-profileImageBs;
+        outline: 2px solid var(--custom-purple-color);
+    }
+
+    .backdropDesign {
+        @apply absolute top-2/4 left-2/4 flex mx-auto h-full w-72 max-1024:hidden bg-customPurple rounded-2xl z-0;
+        transform: translate(-50%, -50%) rotate(100deg);
+    }
+
+    .profile-image {
+        @apply w-[95%] h-[95%] object-contain;
+    }
+
+    .software-text {
+        @apply absolute block text-largest top-[-2rem] left-[13%] max-1024:hidden between-1024-1200:left-[11%] between-1200-1360:left-[16%] max-1360:top-[-1.5rem] max-1360:text-large font-anton text-slate-200;
+    }
+
+    .engineer-text {
+        @apply absolute block text-largest bottom-[-2.2rem] right-[14.5rem] max-1024:hidden between-1024-1200:right-[14%] between-1200-1360:right-[19%] max-1360:text-large font-anton text-slate-200;
+    }
+
+    .profile-info-left {
+        @apply absolute left-[6rem] bottom-[6rem] w-[23%] max-1024:hidden max-1360:left-[5%] max-1360:w-[20%];
+    }
+
+    .profile-info-right {
+        @apply absolute right-[6rem] top-[8rem] w-[23%] max-1024:hidden max-1360:right-[5%] max-1360:w-[20%];
+    }
+
+    .profile-info-combined {
+        @apply w-[50%] max-600:w-[100%] ml-[5%] max-600:m-[5%] min-1024:hidden;
+    }
+
+    .hello-text {
+        @apply text-customPurple font-robotoCondensed font-medium tracking-tight;
+    }
+
+    .name-text {
+        @apply text-customWhite font-anton text-[2rem];
+    }
+
+    .description-text {
+        @apply text-customLightGray font-robotoCondensed font-normal text-lg tracking-tight;
+    }
+
+    .description-text-right {
+        @apply text-customLightGray text-right font-robotoCondensed font-normal text-lg tracking-tight;
+    }
+
+    :not(.backdropDesign) {
+        z-index: 2;
+    }
+}
+
+
+/* Media query for root */
+@media (max-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "./components/Navigation";
-import Home from './Home';
+import Home from './pages/Home'; 
+import Services from './pages/Services';
 
 const App: React.FC = () => {
     return (
@@ -12,6 +13,7 @@ const App: React.FC = () => {
         >
             <Navigation />
             <Home />
+            <Services />
         </div>
     )
 }

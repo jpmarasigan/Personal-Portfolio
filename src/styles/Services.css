@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .services-section {
+        @apply mx-auto h-fit max-w-[85rem] min-h-[45rem];
+        @apply min-1024:max-h-[45rem];
+    }
+
+    .services-container {
+        @apply h-full w-full content-center;
+    }
+
+    .services {
+        @apply w-full h-full mt-16;
+    }
+
+    .title-container {
+        @apply text-center uppercase text-3xl max-600:text-1xl font-anton bg-clip-text text-transparent bg-gradient-to-r;
+        @apply max-1024:text-[4.4rem];
+        background-image: linear-gradient(to right, var(--custom-white-color), var(--custom-purple-color));
+    }
+
+    .development-container {
+        @apply flex flex-wrap h-fit flex-row w-full justify-evenly;
+    }
+
+    .development {
+        @apply block min-h-[26rem] min-w-[320px] w-[360px] m-5 bg-transparent text-customWhite rounded-2xl p-7;
+        box-shadow: 2px 2px 7px 2px var(--custom-purple-color);
+    }
+
+    .development h3 {
+        @apply text-xl uppercase font-anton leading-9 tracking-normal;
+    }
+
+    .development span {
+        @apply italic text-[1.1rem] font-robotoCondensed font-thin;
+    }
+
+    .development p {
+        @apply font-robotoCondensed font-light text-[1.1rem] mt-5;
+    }
+
+    .statistics {
+        @apply flex flex-row max-800:flex-col flex-wrap h-fit w-full justify-evenly;
+    }
+
+    .statistics div {
+        @apply flex items-center justify-center gap-3 max-800:p-4 flex-1 uppercase text-customPurple font-robotoCondensed font-normal text-lg; 
+    }
+
+    .statistics div span {
+        @apply font-anton text-xl;
+    }
+}

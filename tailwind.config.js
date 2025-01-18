@@ -11,6 +11,9 @@ module.exports = {
       base: '1rem',
       lg: '1.2rem',
       xl: '2rem',
+      '1xl': '3rem',
+      '2xl': '4rem',
+      '3xl': '4.7rem',
       'large': '5.5rem',
       'largest': '7rem'
     },
@@ -21,12 +24,13 @@ module.exports = {
         'customPurple': '#A259FF',
         'customWhite': '#D8D3E1',
         'customLightGray': '#BFB4D6',
+        'customBlack': '#13091f',
       },
       borderColor: {
-        'default-purple': '#804AEC',
+        'defaultPurple': '#804AEC',
       },
       boxShadow: {
-        'profile-bs': '0 0 50px 3px #804AEC',
+        'profileImageBs': '0 0 50px 3px #804AEC',
       },
       screens: {
         // min width
@@ -47,6 +51,9 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss'),
+    require('autoprefixer'),
+  ],
 }
 
