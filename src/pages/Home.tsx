@@ -52,7 +52,7 @@ const ProfileImageSection = () => {
 
 const Home = () => {
     return (
-    <div className="home-section">
+    <div id="home" className="home-section">
         <div className="content-container">
             <div className="profile-container">
                 <ProfileImageSection />                

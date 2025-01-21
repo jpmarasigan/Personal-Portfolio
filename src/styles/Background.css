@@ -1,0 +1,89 @@
+.animated-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    overflow-x: hidden;
+    background-color: var(--background-color);
+}
+
+.circles {
+    position: absolute;
+    border-radius: 50%;
+    animation: move 5s infinite;
+    filter: blur(60px);
+    opacity: 0.8;
+
+}
+
+.circles.delay1 {
+    animation-delay: 1s;
+}
+
+.circles.delay2 {
+    animation-delay: 2s;
+}
+
+.c-1 {
+    top: 10px;
+    left: 5%;
+    height: 300px;
+    width: 300px;
+    background: var(--circle-color1);
+}
+
+.c-2 {
+    top: 0;
+    right: 1%;
+    height: 350px;
+    width: 350px;
+    background: var(--circle-color2);
+}
+
+.c-3 {
+    top: 28rem;
+    left: 7%;
+    height: 350px;
+    width: 350px;
+    background: var(--circle-color3);
+}
+
+.c-4 {
+    top: 28rem;
+    right: 10%;
+    height: 280px;
+    width: 280px;
+    background: var(--circle-color4);
+}
+
+.c-5 {
+    top: 60rem;
+    left: 10%;
+    height: 410px;
+    width: 410px;
+    background-color: var(--circle-color1);
+}
+
+.c-6 {
+    top: 60rem;
+    right: 3%;
+    height: 370px;
+    width: 370px;
+    background-color: var(--circle-color2);
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    33% {
+        transform: translateY(0) translateX(100px);
+    }
+    66% {
+        transform: translateY(0) translateX(-100px);
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+

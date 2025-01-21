@@ -23,11 +23,11 @@ const Navigation = () => {
                     <nav className="flex justify-between mx-auto">
                         {/* Links */}
                         <ul className="flex gap-x-14 max-980:gap-x-10 p-8 mmin-1024:mx-auto text-customLightGray font-normal text-lg">
-                            <li className="hover:underline">HOME</li>
-                            <li className="hover:underline">SERVICES</li>
-                            <li className="hover:underline">RESUME</li>
-                            <li className="hover:underline">SKILL</li>
-                            <li className="hover:underline">CONTACT</li>
+                            <li className="hover:underline"><a href="#home">HOME</a></li>
+                            <li className="hover:underline"><a href="#services">SERVICES</a></li>
+                            <li className="hover:underline"><a href="#">RESUME</a></li>
+                            <li className="hover:underline"><a href="#">SKILL</a></li>
+                            <li className="hover:underline"><a href="#">CONTACT</a></li>
                         </ul>
                     </nav>
                     {/* Button for Recruit */}

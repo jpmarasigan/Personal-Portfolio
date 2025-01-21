@@ -17,8 +17,8 @@
     }
 
     .title-container {
-        @apply text-center uppercase text-3xl max-600:text-1xl font-anton bg-clip-text text-transparent bg-gradient-to-r;
-        @apply max-1024:text-[4.4rem];
+        @apply text-center uppercase text-2xl max-600:text-1xl font-anton bg-clip-text text-transparent bg-gradient-to-r;
+        @apply max-1024:text-[3.5rem];
         background-image: linear-gradient(to right, var(--custom-white-color), var(--custom-purple-color));
     }
 

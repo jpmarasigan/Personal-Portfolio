@@ -3,18 +3,23 @@
 @tailwind utilities;
 
 * {
-  /* outline: 1px solid red; */
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  --custom-purple-color: #804AEC;
-  --custom-white-color: #BFB4D6;
+    /* outline: 1px solid red; */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --background-color: #040013;
+    --custom-purple-color: #804AEC;
+    --custom-white-color: #BFB4D6;
+    --circle-color1: #381c5b;
+    --circle-color2: #162a5f;
+    --circle-color3: #04394f;
+    --circle-color4: #132351;
 }
   
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
