@@ -5,7 +5,6 @@
 @layer components {
     .services-section {
         @apply mx-auto h-fit max-w-[85rem] min-h-[45rem];
-        @apply min-1024:max-h-[45rem];
     }
 
     .services-container {
@@ -23,11 +22,15 @@
     }
 
     .development-container {
-        @apply flex flex-wrap h-fit flex-row w-full justify-evenly;
+        @apply flex flex-wrap h-fit w-full justify-evenly;
+        @apply max-800:p-4;
     }
 
     .development {
-        @apply block min-h-[26rem] min-w-[320px] w-[360px] m-5 bg-transparent text-customWhite rounded-2xl p-7;
+        @apply block min-h-[26rem] w-[360px] m-5 bg-transparent text-customWhite rounded-2xl p-7; 
+        @apply max-1200:mx-36 max-1200:w-[450px] max-1200:min-h-[20rem];
+        @apply max-800:w-[360px] max-800:mx-4;
+
         box-shadow: 2px 2px 7px 2px var(--custom-purple-color);
     }
 

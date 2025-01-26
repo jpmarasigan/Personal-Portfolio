@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     --background-color: #040013;
+    --translucent-background: rgba(174, 165, 165, 0.05);
     --custom-purple-color: #804AEC;
     --custom-white-color: #BFB4D6;
     --circle-color1: #381c5b;
