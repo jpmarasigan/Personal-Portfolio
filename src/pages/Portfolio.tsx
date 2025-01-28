@@ -1,5 +1,45 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../styles/Portfolio.css';
+
+const myprojects = [
+    {
+        id: "jp-ecommerce-rbac",
+        title: "E-Commerce RBAC System",
+        summary: "Developed a personal e-commerce web application with role-based access control for both admin and user functionalities.",
+        image: "images/sample1.jfif",
+    },
+    {
+        id: "jp-youtube-transcript-summarizer",
+        title: "Youtube Transcript Summarizer",
+        summary: "This Flask-based web application summarizes YouTube video content by taking a video link as input and providing a concise summary.",
+        image: "images/sample1.jfif",
+    },
+    {
+        id: "jp-discord-bot-voting-system",
+        title: "Discord Voting Bot System",
+        summary: "This Python script enables a simple yet effective voting system within a Discord bot.",
+        image: "images/sample1.jfif",
+    },
+    {
+        id: "4",
+        title: "Discord Voting Bot System",
+        summary: "This Python script enables a simple yet effective voting system within a Discord bot.",
+        image: "images/sample1.jfif",
+    },
+    {
+        id: "5",
+        title: "Discord Voting Bot System",
+        summary: "This Python script enables a simple yet effective voting system within a Discord bot.",
+        image: "images/sample1.jfif",
+    },
+    {
+        id: "6",
+        title: "Discord Voting Bot System",
+        summary: "This Python script enables a simple yet effective voting system within a Discord bot.",
+        image: "images/sample1.jfif",
+    },
+]
 
 type ContentType = {
     projects: JSX.Element;
@@ -9,98 +49,22 @@ type ContentType = {
 const content: ContentType = {
     projects: 
         <div className="projects-container">
-            <div className="project">
-                <div className="details">
-                    <img src="images/sample1.jfif" alt="project image"/>
-                    <h3>E-Commerce RBAC System</h3>
-                    <p>
-                        Developed a personal e-commerce web application with 
-                        role-based access control for both admin and user 
-                        functionalities.
-                    </p>
-                </div>
-                <div className='nav'>
-                    <div className="nav-button">
-                        <p>Details<span>&gt;</span></p>
+            {myprojects.map((project) => (
+                <div key={project.id} className='project'>
+                    <div className="details">
+                        <img src={project.image} alt="project thumbnail" />
+                        <h3>{project.title}</h3>
+                        <p>{project.summary}</p>
+                    </div>
+                    <div className='nav'>
+                        <div className="nav-button">
+                            <Link to={`/projects/${project.id}`}>
+                                <p>Details<span>&gt;</span></p>
+                            </Link>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="project">
-                <div className="details">
-                    <img src="images/sample2.jpg" alt="project image"/>
-                    <h3>Youtube Transcript Summarizer</h3>
-                    <p>
-                        This Flask-based web application summarizes YouTube 
-                        video content by taking a video link as input and 
-                        providing a concise summary.
-                    </p>
-                </div>
-                <div className='nav'>
-                    <div className="nav-button">
-                        <p>Details<span>&gt;</span></p>
-                    </div>
-                </div>
-            </div>
-            <div className="project">
-                <div className="details">
-                    <img src="images/sample1.jfif" alt="project image"/>
-                    <h3>Discord Voting Bot System</h3>
-                    <p>
-                        This Python script enables a simple yet effective 
-                        voting system within a Discord bot. 
-                    </p>
-                </div>
-                <div className='nav'>
-                    <div className="nav-button">
-                        <p>Details<span>&gt;</span></p>
-                    </div>
-                </div>
-            </div>
-            <div className="project">
-                <div className="details">
-                    <img src="images/sample1.jfif" alt="project image"/>
-                    <h3>Discord Voting Bot System</h3>
-                    <p>
-                        This Python script enables a simple yet effective 
-                        voting system within a Discord bot. 
-                    </p>
-                </div>
-                <div className='nav'>
-                    <div className="nav-button">
-                        <p>Details<span>&gt;</span></p>
-                    </div>
-                </div>
-            </div>
-            <div className="project">
-                <div className="details">
-                    <img src="images/sample1.jfif" alt="project image"/>
-                    <h3>Discord Voting Bot System</h3>
-                    <p>
-                        This Python script enables a simple yet effective 
-                        voting system within a Discord bot. 
-                    </p>
-                </div>
-                <div className='nav'>
-                    <div className="nav-button">
-                        <p>Details<span>&gt;</span></p>
-                    </div>
-                </div>
-            </div>
-            <div className="project">
-                <div className="details">
-                    <img src="images/sample1.jfif" alt="project image"/>
-                    <h3>Discord Voting Bot System</h3>
-                    <p>
-                        This Python script enables a simple yet effective 
-                        voting system within a Discord bot. 
-                    </p>
-                </div>
-                <div className='nav'>
-                    <div className="nav-button">
-                        <p>Details<span>&gt;</span></p>
-                    </div>
-                </div>
-            </div>
+            ))}
         </div>,
     certifications: 
         <div>
