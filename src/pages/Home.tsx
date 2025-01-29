@@ -9,20 +9,26 @@ const ProfileInfoSection = () => {
             <div className="profile-info-left">
                 <p className="hello-text">HELLO, I AM</p>
                 <p className="name-text">JOHN PATRICK</p>
-                <p className="description-text">AS A RECENT GRADUATE IN FULL-STACK DEVELOPMENT. I AM PASSIONATE ABOUT BOTH FRONT-END AND BACK-END TECHNOLOGIES</p>
+                <p className="description-text">
+                    A GRADUATING STUDENT IN FULL-STACK DEVELOPMENT, PASSIONATE ABOUT 
+                    BOTH FRONT-END AND BACK-END TECHNOLOGIES
+                </p>
             </div>
             <div className="profile-info-right">
-                <p className="description-text-right">IN MY PORTFOLIO, YOU WILL FIND A RANGE OF PROJECTS THAT HIGHLIGHT MY SKILLS AND SHOWCASE MY EXPERTISE</p>
+                <p className="description-text-right">
+                    IN MY PORTFOLIO, YOU WILL FIND A RANGE OF PROJECTS THAT HIGHLIGHT 
+                    MY SKILLS AND SHOWCASE MY EXPERTISE
+                </p>
             </div>
 
             {/* Combined layout width <= 1024px */}
             <div className="profile-info-combined">
                 <p className="hello-text">HELLO, I AM</p>
-                <p className="name-text">JOHN PATRICK</p>
+                <p className="name-text mb-2">JOHN PATRICK</p>
                 <p className="description-text">
-                    AS A RECENT GRADUATE IN FULL-STACK DEVELOPMENT. I AM PASSIONATE ABOUT BOTH FRONT-END AND 
-                    BACK-END TECHNOLOGIES IN MY PORTFOLIO, YOU WILL FIND A RANGE OF PROJECTS THAT HIGHLIGHT 
-                    MY SKILLS AND SHOWCASE MY EXPERTISE
+                    A graduating student in full-stack development, passionate about both 
+                    front-end and back-end technologies. In my portfolio, you will find a 
+                    range of projects that highlight my skills and showcase my expertise
                 </p>
             </div>
         </>

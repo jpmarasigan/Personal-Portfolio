@@ -5,7 +5,7 @@
 @layer components {
     .navbar {
         @apply fixed w-full bg-transparent; 
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
     }
 
     .navbar.scrolled {

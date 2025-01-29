@@ -152,7 +152,7 @@ const ProjectDetails = ({bgParam} : {bgParam:JSX.Element}) => {
                                 <ul>
                                     {projectDetails.keyFeatures.map((feature, index) => {
                                         return (
-                                            <div className="feature">
+                                            <div key={index} className="feature">
                                                 <img src="/images/star-icon.svg" alt="star icon" />
                                                 <li key={index}>{feature}</li> 
                                             </div>  

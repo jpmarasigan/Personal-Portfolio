@@ -4,13 +4,13 @@ const Statistics = () => {
     return (
         <div className="statistics">
             <div className="stats">
-                <span>23</span> years of experience
+                <span>03</span> years of experience
             </div>
             <div className="stats">
-                <span>00</span> projects completed
+                <span>06</span> projects completed
             </div>
             <div className="stats">
-                <span>00</span> satisfied clients
+                <span>01</span> satisfied clients
             </div>
         </div>
     )
@@ -42,7 +42,7 @@ const DevelopmentField = () => {
             </div>
             <div className="development">
                 <h3>Python Development</h3>
-                <span>Python, Flask</span>
+                <span>Python, Flask, PyGame</span>
                 <p>
                     I have worked with Python and Flask through school projects,
                     developing back-end functionality and integrating ML/DL model to
