@@ -6,6 +6,7 @@
     .home-section {
         @apply mx-auto h-screen max-w-[85rem] max-h-[45rem];
         @apply max-1024:min-h-[40rem] max-1024:max-h-[40rem];
+        @apply max-600:h-[30rem] max-600:min-h-[30rem];
     }
 
     .content-container {

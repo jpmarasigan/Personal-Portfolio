@@ -55,7 +55,7 @@
         @apply ml-2;
     }
 
-    .projects-container {
+    .projects-container, .certificates-container {
         @apply flex flex-wrap justify-center py-3 gap-3 text-customWhite;
     }
 
@@ -66,19 +66,24 @@
         background-color: rgba(243, 234, 234, 0.1);
     }
     
-    .project .details {
+    .certificate {
+        @apply relative min-h-[400px] min-w-[300px] rounded-lg pt-4 pr-4 pl-4 pb-20;
+        width: calc(33.33% - (2 * 0.75rem / 3)); /* Adjust width to account for gap of 3 */
+        background-color: rgba(243, 234, 234, 0.1);
+    }
+    .project .details, .certificate .details {
         @apply w-full font-robotoCondensed flex-grow;
     }
 
-    .project .details img {
+    .project .details img, .certificate .details img {
         @apply h-[200px] w-full object-cover rounded-md;
     }
 
-    .project .details h3 {
+    .project .details h3, .certificate .details h3 {
         @apply py-3 text-lg font-medium;
     }
 
-    .project .details p {
+    .project .details p, .certificate .details p {
         @apply font-light;
     }
 

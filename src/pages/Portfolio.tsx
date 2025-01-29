@@ -7,38 +7,47 @@ const myprojects = [
         id: "jp-ecommerce-rbac",
         title: "E-Commerce RBAC System",
         summary: "Developed a personal e-commerce web application with role-based access control for both admin and user functionalities.",
-        image: "images/project_thumbnails/rbac-thumbnail.jpg",
+        image: "images/projects/rbac-thumbnail.jpg",
     },
     {
         id: "jp-youtube-transcript-summarizer",
         title: "Youtube Transcript Summarizer",
         summary: "This Flask-based web application summarizes YouTube video content by taking a video link as input and providing a concise summary.",
-        image: "images/project_thumbnails/youtube-thumbnail.jpg",
+        image: "images/projects/youtube-thumbnail.jpg",
     },
     {
         id: "tweetpulse",
         title: "Tweet Sentiment Analysis",
-        summary: "This web application provides real-time sentiment analysis on uploaded public tweets, all while ensuring user-friendly interaction",
-        image: "images/project_thumbnails/tweetpulse-thumbnail.jpg",
+        summary: "This web application provides real-time sentiment analysis on uploaded public tweets, all while ensuring user-friendly interaction.",
+        image: "images/projects/tweetpulse-thumbnail.jpg",
     },
     {
-        id: "jp-discord-bot-voting-system",
+        id: "w2eat-discord-bot",
         title: "Discord Voting Bot System",
         summary: "This Python script enables a simple yet effective voting system within a Discord bot.",
-        image: "images/project_thumbnails/sample1.jfif",
+        image: "images/projects/discord-thumbnail.jpg",
     },
     {
-        id: "5",
-        title: "Discord Voting Bot System",
-        summary: "This Python script enables a simple yet effective voting system within a Discord bot.",
-        image: "images/project_thumbnails/sample1.jfif",
+        id: "wumpus-world",
+        title: "Wumpus World: Knowledge-Based AI",
+        summary: "An AI-controlled Wumpus World Game where an agent navigates a grid, avoiding dangers and seeking gold using perceptions for decision-making.",
+        image: "images/projects/wumpus-thumbnail.jpg",
     },
+    // {
+    //     id: "6",
+    //     title: "Discord Voting Bot System",
+    //     summary: "This Python script enables a simple yet effective voting system within a Discord bot.",
+    //     image: "images/projects/skeleton.jpg",
+    // },
+]
+
+const mycertificates = [
     {
-        id: "6",
-        title: "Discord Voting Bot System",
-        summary: "This Python script enables a simple yet effective voting system within a Discord bot.",
-        image: "images/project_thumbnails/sample1.jfif",
-    },
+        id: "cert1",
+        title: "Responsive Web Design",
+        summary: "I gained hands-on experience in HTML, CSS, and media queries, ensuring optimal viewing across devices from desktops to mobile phones. This certification highlights my knowledge of mobile-first design principles, flexbox, and CSS grid layout.",
+        image: "images/certificates/responsive-web-design.png",
+    }
 ]
 
 type ContentType = {
@@ -71,9 +80,22 @@ const content: ContentType = {
             ))}
         </div>,
     certifications: 
-        <div>
-            Certifications Content
-        </div>
+    <div className="certificates-container">
+        {mycertificates.map((certificate) => (
+            <div key={certificate.id} className='certificate'>
+                <div className="details">
+                    <img src={certificate.image} alt="certificate thumbnail" />
+                    <h3>{certificate.title}</h3>
+                    <p>{certificate.summary}</p>
+                </div>
+                <div className='nav'>
+                    <div className="nav-button" onClick={handleProjectClick}>
+                        <p>Details<span>&gt;</span></p>
+                    </div>
+                </div>
+            </div>
+        ))}
+    </div>
 };
 
 const PortfolioShowcase = () => {
