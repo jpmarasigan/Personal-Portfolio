@@ -47,6 +47,7 @@ const mycertificates = [
         title: "Responsive Web Design",
         summary: "I gained hands-on experience in HTML, CSS, and media queries, ensuring optimal viewing across devices from desktops to mobile phones. This certification highlights my knowledge of mobile-first design principles, flexbox, and CSS grid layout.",
         image: "images/certificates/responsive-web-design.png",
+        url: "https://www.freecodecamp.org/certification/jay_peez/responsive-web-design",
     }
 ]
 
@@ -89,9 +90,9 @@ const content: ContentType = {
                     <p>{certificate.summary}</p>
                 </div>
                 <div className='nav'>
-                    <div className="nav-button" onClick={handleProjectClick}>
-                        <p>Details<span>&gt;</span></p>
-                    </div>
+                    <a className="nav-button" onClick={handleProjectClick} href={certificate.url} target="_blank">
+                        <p>View Certificate<span>&gt;</span></p>
+                    </a>
                 </div>
             </div>
         ))}

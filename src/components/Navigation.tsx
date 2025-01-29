@@ -20,14 +20,25 @@ const NavButton = () => {
 
 const Navigation = () => {
     const [scrolling, setScrolling] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
-            console.log(window.scrollY);
-            if (window.scrollY > 0) // Adjusted threshold to 0
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY)
+                setIsVisible(false);    // Scrolling down
+            else
+                setIsVisible(true);     // Scrolling up
+
+            // Remove navigation background if at the top of webpage
+            if (window.scrollY > 0) 
                 setScrolling(true);
             else
                 setScrolling(false);
+
+            setLastScrollY(currentScrollY);
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -35,10 +46,10 @@ const Navigation = () => {
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, []);
+    }, [lastScrollY]);
 
     return (
-        <div className={`navbar ${scrolling ? "scrolled" : ""} z-50`}>
+        <div className={`navbar ${scrolling ? "scrolled" : ""} ${isVisible ? "translate-y-0" : "-translate-y-full"} z-50`}>
             <div className="nav-container">
                 <div className="flex relative mx-[5rem] max-980:w-[90%] max-980:mx-auto max-1140:flex-initial items-center z-50">
                     <nav className="flex justify-between mx-auto">

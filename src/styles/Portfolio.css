@@ -71,6 +71,7 @@
         width: calc(33.33% - (2 * 0.75rem / 3)); /* Adjust width to account for gap of 3 */
         background-color: rgba(243, 234, 234, 0.1);
     }
+
     .project .details, .certificate .details {
         @apply w-full font-robotoCondensed flex-grow;
     }
@@ -87,7 +88,7 @@
         @apply font-light;
     }
 
-    .project .nav {
+    .project .nav, .certificate .nav {
         @apply absolute bottom-4 right-4 px-4 py-2 rounded-lg;
         background-color: rgba(191, 183, 183, 0.08);
         transition: background-color 0.3s ease,
@@ -95,13 +96,13 @@
         overflow: hidden;
     }
 
-    .project .nav:hover {
+    .project .nav:hover, .certificate .nav:hover {
         @apply cursor-pointer;
         background-color: rgba(191, 183, 183, 0.25);
         transform: scale(1.03);
     }
 
-    .project .nav:active {
+    .project .nav:active, .certificate .nav:active {
         outline: 1px solid white;
         transform: scale(1.05);
     }

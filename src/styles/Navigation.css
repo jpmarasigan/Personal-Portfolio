@@ -5,10 +5,12 @@
 @layer components {
     .navbar {
         @apply fixed w-full bg-transparent; 
+        transition: all 0.3s ease;
     }
 
     .navbar.scrolled {
-        background: rgba(6,2,22, 1);
+        background: rgba(6,2,22, 0.7);
+        backdrop-filter: blur(20px);
     }
 
     .nav-container {
