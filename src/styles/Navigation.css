@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components; 
+@tailwind utilities;
+
+@layer components {
+    .navbar {
+        @apply fixed w-full bg-transparent; 
+    }
+
+    .navbar.scrolled {
+        background: rgba(6,2,22, 1);
+    }
+
+    .nav-container {
+        @apply max-800:hidden font-robotoCondensed max-w-[85rem] mx-auto;
+    }
+}

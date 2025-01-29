@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import '../styles/ProjectDetails.css';
 
@@ -6,7 +7,7 @@ const allProjectDetails = [
         id: "jp-ecommerce-rbac",
         title: "E-Commerce RBAC System",
         thumbnail: "/images/project_thumbnails/rbac-detail-image.jpg",
-        details: "An E-Commerce Role-Based Access Control (RBAC) System designed to manage users, orders, products, and a MySQL database through an Admin and User interface. It offers two types of roles: Admin and User. The system allows the Admin to manage products, users, and orders, while the User can browse and place orders.",
+        details: "An E-Commerce Role-Based Access Control (RBAC) System designed to manage users, orders, products, and a MySQL database through an Admin and User interface. It offers two types of roles: Admin and User. The system allows the Admin to manage products, users, and orders, while the User can browse and place orders",
         liveDemo: "liveDemo",
         githubLink: "https://github.com/jpmarasigan/E-Commerce-Role-Based-Access-Control-System",
         technologyUsed: ['HTML', 'CSS', 'JavaScript', 'PHP', 'SQL', 'XAMPP', 'MySQL'],  
@@ -19,9 +20,9 @@ const allProjectDetails = [
     },
     {
         id: "jp-youtube-transcript-summarizer",
-        title: "Youtube Transcript Summarizer",
+        title: "Insight: Youtube Transcript Summarizer",
         thumbnail: "/images/project_thumbnails/youtube-detail-image.jpg",
-        details: "A web application built with Flask designed to summarize YouTube video content. By taking a YouTube video link as input, it provides a concise summary of the video’s content. This is especially useful for users who want to quickly understand key points without watching the entire video.",
+        details: "A web application built with Flask designed to summarize YouTube video content. By taking a YouTube video link as input, it provides a concise summary of the video’s content. This is especially useful for users who want to quickly understand key points without watching the entire video",
         liveDemo: "liveDemo",
         githubLink: "https://github.com/jpmarasigan/Youtube-Link-Content-Summarizer",
         technologyUsed: ['HTML', 'CSS', 'JavaScript', 'Python', 'Flask Framework', 'DJAngular', 'NLTK', 'Youtube API'],  
@@ -31,14 +32,31 @@ const allProjectDetails = [
             'Provides an intuitive and accessible interface for users to input links and view summaries easily',
             'Responsive and consistent experience across all devices'
         ],
+    },
+    {
+        id: "tweetpulse",
+        title: "TweetPulse: Tweet Sentiment Analysis",
+        thumbnail: "/images/project_thumbnails/tweetpulse-detail-image.jpg",
+        details: "A web application build with Flask that performs sentiment analysis on public tweets from Twitter, but due to the constraints of the Twitter API introduced under Elon Musk's ownership in 2023, it becomes unavailable as the API is now a paid service, no longer free",
+        liveDemo: "liveDemo",
+        githubLink: "https://github.com/jpmarasigan/Youtube-Link-Content-Summarizer",
+        technologyUsed: ['HTML', 'CSS', 'JavaScript', 'Python', 'Flask Framework', 'RoBERTa Model'],  
+        keyFeatures: [
+            'Performs real-time sentiment analysis on public tweets uploaded by users',
+            'Utilizes Roberta machine learning algorithm to provide accurate sentiment scores',
+            'User-friendly interface for easy upload and analysis of tweets',
+        ],
     }
 ]
 
 const ProjectDetails = ({bgParam} : {bgParam:JSX.Element}) => {
     const { projectId } = useParams();
     const projectDetails = allProjectDetails.find((project) => project.id === projectId);
-
     let navigate = useNavigate();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     if (!projectDetails) {
         return (
@@ -48,74 +66,76 @@ const ProjectDetails = ({bgParam} : {bgParam:JSX.Element}) => {
         );
     }
 
-    const handleBackClick = () => { navigate("/") };
-
+    const handleBackClick = () => { navigate("/") }; 
+    
     return (
-        <div className="project-details-section">
-            <div className="nav-col">
-                <div 
-                    className="back-button" onClick={handleBackClick}>
-                    <img src="/images/arrow-icon.svg" />
-                    <p>Back</p>
+        <>
+            <div className="project-details-section">
+                <div className="nav-col">
+                    <div 
+                        className="back-button" onClick={handleBackClick}>
+                        <img src="/images/arrow-icon.svg" />
+                        <p>Back</p>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <div className='project-details-container'>
-                    <div className="col col-1">
-                        <h1>{projectDetails.title}</h1>
-                        <div className="border-bottom-design"></div>
-                        <p>{projectDetails.details}</p>
+                <div>
+                    <div className='project-details-container'>
+                        <div className="col col-1">
+                            <h1>{projectDetails.title}</h1>
+                            <div className="border-bottom-design"></div>
+                            <p>{projectDetails.details}</p>
 
-                        <div className="link-container">
-                            <a className="button-link">
-                                <img src="/images/link-icon.svg" />
-                                <p>Live Demo</p>
-                            </a>
-                            <a href={projectDetails.githubLink} target="_blank" className="button-link">
-                                <img src="/images/github-icon.svg" />
-                                <p>GitHub</p>
-                            </a>
-                        </div>
-
-                        <div className="technology-used-container">
-                            <div className="title">
-                                <img src="/images/technology-icon.svg" />
-                                <p>Technologies Used</p>
+                            <div className="link-container">
+                                <a className="button-link">
+                                    <img src="/images/link-icon.svg" />
+                                    <p>Live Demo</p>
+                                </a>
+                                <a href={projectDetails.githubLink} target="_blank" className="button-link">
+                                    <img src="/images/github-icon.svg" />
+                                    <p>GitHub</p>
+                                </a>
                             </div>
-                            <div className="technologies">
-                                {projectDetails.technologyUsed.map((tech, index) => {
-                                    return (
-                                        <div key={index} className="technology-item">{tech}</div>
-                                    )
-                                })} 
+
+                            <div className="technology-used-container">
+                                <div className="title">
+                                    <img src="/images/technology-icon.svg" />
+                                    <p>Technologies Used</p>
+                                </div>
+                                <div className="technologies">
+                                    {projectDetails.technologyUsed.map((tech, index) => {
+                                        return (
+                                            <div key={index} className="technology-item">{tech}</div>
+                                        )
+                                    })} 
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col col-2">
+                            <div className="thumbnail-container">
+                            <img src={projectDetails.thumbnail} alt="project image" />
+                            </div>
+                            <div className="key-features-container">
+                                <div className="title">
+                                    <img src="/images/link-icon.svg"/>
+                                    <h3>Key Features</h3>
+                                </div>
+                                <ul>
+                                    {projectDetails.keyFeatures.map((feature, index) => {
+                                        return (
+                                            <div className="feature">
+                                                <img src="/images/star-icon.svg" alt="star icon" />
+                                                <li key={index}>{feature}</li> 
+                                            </div>  
+                                        )
+                                    })}
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div className="col col-2">
-                        <div className="thumbnail-container">
-                        <img src={projectDetails.thumbnail} alt="project image" />
-                        </div>
-                        <div className="key-features-container">
-                            <div className="title">
-                                <img src="/images/link-icon.svg"/>
-                                <h3>Key Features</h3>
-                            </div>
-                            <ul>
-                                {projectDetails.keyFeatures.map((feature, index) => {
-                                    return (
-                                        <div className="feature">
-                                            <img src="/images/star-icon.svg" alt="star icon" />
-                                            <li key={index}>{feature}</li> 
-                                        </div>  
-                                    )
-                                })}
-                            </ul>
-                        </div>
-                    </div>
                 </div>
-                {bgParam}
             </div>
-        </div>
+            {bgParam}
+        </>
     )
 }
 

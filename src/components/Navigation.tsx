@@ -1,4 +1,6 @@
+import { useState, useEffect } from "react";
 import Hamburger from "../components/Hamburger";
+import "../styles/Navigation.css";
 
 const NavButton = () => {
     return (
@@ -15,11 +17,30 @@ const NavButton = () => {
         </div>
     )
 }
+
 const Navigation = () => {
+    const [scrolling, setScrolling] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            console.log(window.scrollY);
+            if (window.scrollY > 0) // Adjusted threshold to 0
+                setScrolling(true);
+            else
+                setScrolling(false);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
-        <>
-            <div className="fixed z-50 max-800:hidden w-full font-robotoCondensed max-w-[85rem] left-0 right-0 mx-auto">
-                <div className="flex relative mx-[5rem] max-980:w-[90%] max-980:mx-auto max-1140:flex-initial items-center">
+        <div className={`navbar ${scrolling ? "scrolled" : ""} z-50`}>
+            <div className="nav-container">
+                <div className="flex relative mx-[5rem] max-980:w-[90%] max-980:mx-auto max-1140:flex-initial items-center z-50">
                     <nav className="flex justify-between mx-auto">
                         {/* Links */}
                         <ul className="flex gap-x-14 max-980:gap-x-10 p-8 mmin-1024:mx-auto text-customLightGray font-normal text-lg">
@@ -35,7 +56,7 @@ const Navigation = () => {
                 </div>
             </div>
             <Hamburger />
-        </>
+        </div>
     )
 }
 

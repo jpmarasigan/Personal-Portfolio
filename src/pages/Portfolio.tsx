@@ -16,13 +16,13 @@ const myprojects = [
         image: "images/project_thumbnails/youtube-thumbnail.jpg",
     },
     {
-        id: "jp-discord-bot-voting-system",
-        title: "Discord Voting Bot System",
-        summary: "This Python script enables a simple yet effective voting system within a Discord bot.",
-        image: "images/project_thumbnails/sample1.jfif",
+        id: "tweetpulse",
+        title: "Tweet Sentiment Analysis",
+        summary: "This web application provides real-time sentiment analysis on uploaded public tweets, all while ensuring user-friendly interaction",
+        image: "images/project_thumbnails/tweetpulse-thumbnail.jpg",
     },
     {
-        id: "4",
+        id: "jp-discord-bot-voting-system",
         title: "Discord Voting Bot System",
         summary: "This Python script enables a simple yet effective voting system within a Discord bot.",
         image: "images/project_thumbnails/sample1.jfif",
