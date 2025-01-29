@@ -25,7 +25,7 @@ const Navigation = () => {
                         <ul className="flex gap-x-14 max-980:gap-x-10 p-8 mmin-1024:mx-auto text-customLightGray font-normal text-lg">
                             <li className="hover:underline"><a href="#home">HOME</a></li>
                             <li className="hover:underline"><a href="#services">SERVICES</a></li>
-                            <li className="hover:underline"><a href="#">RESUME</a></li>
+                            <li className="hover:underline"><a href="#portfolio">PORFOLIO</a></li>
                             <li className="hover:underline"><a href="#">SKILL</a></li>
                             <li className="hover:underline"><a href="#">CONTACT</a></li>
                         </ul>

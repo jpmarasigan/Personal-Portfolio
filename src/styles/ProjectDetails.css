@@ -3,17 +3,38 @@
 @tailwind utilities;
 
 @layer components {
-    .project-details-container {
-        @apply w-[60rem] grid grid-rows-2 grid-cols-2 gap-x-12 mx-auto text-customWhite font-robotoCondensed text-lg;
+    .project-details-section {
+        @apply py-6 text-customWhite;
     }
 
     .nav-col {
-        @apply w-[60rem] mx-auto h-auto mb-4; /* Ensure height is auto and add margin-bottom */
-        outline: 1px solid white;
+        @apply w-[60rem] mx-auto h-auto mb-4; 
+    }
+
+    .nav-col .back-button {
+        @apply flex justify-start items-center w-fit gap-3 py-2 px-4 rounded-xl;
+        background-color: rgba(37, 43, 72, 0.5);
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-col .back-button:hover {
+        @apply cursor-pointer;
+        background-color: rgba(37, 43, 72, 1);
+    }
+
+    .nav-col .back-button {
+        @apply text-white;
+        img {
+            width: 20px;
+            transform: rotate(-180deg);
+        }
+    }
+
+    .project-details-container {
+        @apply w-[60rem] grid grid-cols-2 gap-x-12 mx-auto font-robotoCondensed text-lg;
     }
 
     .col-1, .col-2 {
-        outline: 1px solid red;
         @apply col-span-1;
     }
 
@@ -44,10 +65,19 @@
         @apply flex justify-center items-center gap-1 px-5 py-2 rounded-lg;
         background: linear-gradient(
             to right,
-            var(--custom-gradient-blue),
-            var(--custom-gradient-violet)
+            var(--custom-gradient-blue-trans),
+            var(--custom-gradient-violet-trans)
         );
         box-shadow: 0 0 0 0.3px rgba(191, 180, 214, 0.7);
+    }
+
+    .link-container .button-link:hover {
+        @apply cursor-pointer;
+        background: linear-gradient(
+            to right,
+            var(--custom-gradient-blue-opaq),
+            var(--custom-gradient-violet-opaq)
+        );
     }
 
     .button-link:nth-child(1) img {

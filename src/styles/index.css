@@ -10,8 +10,10 @@
     --background-color: #040013;
     --translucent-background: rgba(174, 165, 165, 0.05);
     --custom-purple-color: #804AEC;
-    --custom-gradient-blue: rgba(46, 40, 155, 0.3);
-    --custom-gradient-violet: rgba(77, 31, 158, 0.3);
+    --custom-gradient-blue-trans: rgba(46, 40, 155, 0.3);
+    --custom-gradient-violet-trans: rgba(77, 31, 158, 0.3);
+    --custom-gradient-blue-opaq: rgba(46, 40, 155, 0.7);
+    --custom-gradient-violet-opaq: rgba(77, 31, 158, 0.7);
     --custom-blue-color: #6375c3;
     --custom-white-color: #BFB4D6;
     --circle-color1: #381c5b;

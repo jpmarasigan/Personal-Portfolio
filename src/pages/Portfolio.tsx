@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../styles/Portfolio.css';
 
@@ -7,37 +7,37 @@ const myprojects = [
         id: "jp-ecommerce-rbac",
         title: "E-Commerce RBAC System",
         summary: "Developed a personal e-commerce web application with role-based access control for both admin and user functionalities.",
-        image: "images/sample1.jfif",
+        image: "images/project_thumbnails/rbac-thumbnail.jpg",
     },
     {
         id: "jp-youtube-transcript-summarizer",
         title: "Youtube Transcript Summarizer",
         summary: "This Flask-based web application summarizes YouTube video content by taking a video link as input and providing a concise summary.",
-        image: "images/sample1.jfif",
+        image: "images/project_thumbnails/youtube-thumbnail.jpg",
     },
     {
         id: "jp-discord-bot-voting-system",
         title: "Discord Voting Bot System",
         summary: "This Python script enables a simple yet effective voting system within a Discord bot.",
-        image: "images/sample1.jfif",
+        image: "images/project_thumbnails/sample1.jfif",
     },
     {
         id: "4",
         title: "Discord Voting Bot System",
         summary: "This Python script enables a simple yet effective voting system within a Discord bot.",
-        image: "images/sample1.jfif",
+        image: "images/project_thumbnails/sample1.jfif",
     },
     {
         id: "5",
         title: "Discord Voting Bot System",
         summary: "This Python script enables a simple yet effective voting system within a Discord bot.",
-        image: "images/sample1.jfif",
+        image: "images/project_thumbnails/sample1.jfif",
     },
     {
         id: "6",
         title: "Discord Voting Bot System",
         summary: "This Python script enables a simple yet effective voting system within a Discord bot.",
-        image: "images/sample1.jfif",
+        image: "images/project_thumbnails/sample1.jfif",
     },
 ]
 
@@ -45,6 +45,10 @@ type ContentType = {
     projects: JSX.Element;
     certifications: JSX.Element;
 };
+
+const handleProjectClick = () => {
+    sessionStorage.setItem("scrollPosition", window.scrollY.toString());
+}
 
 const content: ContentType = {
     projects: 
@@ -57,7 +61,7 @@ const content: ContentType = {
                         <p>{project.summary}</p>
                     </div>
                     <div className='nav'>
-                        <div className="nav-button">
+                        <div className="nav-button" onClick={handleProjectClick}>
                             <Link to={`/projects/${project.id}`}>
                                 <p>Details<span>&gt;</span></p>
                             </Link>
@@ -73,7 +77,12 @@ const content: ContentType = {
 };
 
 const PortfolioShowcase = () => {
-    const [activeContent, setActiveContent] = useState<keyof ContentType>('projects');
+    const [activeContent, setActiveContent] = useState<keyof ContentType>('projects');  
+    
+    useEffect(() => {
+        const savedPosition = sessionStorage.getItem("scrollPosition");
+        if (savedPosition) { window.scroll(0, parseInt(savedPosition, 10))};
+    })
 
     return (
         <div className='portfolio-showcase'>
