@@ -71,7 +71,7 @@
         box-shadow: 0 0 0 0.3px rgba(191, 180, 214, 0.7);
     }
 
-    .link-container .button-link:hover {
+    .link-container .button-link:nth-child(2):hover {
         @apply cursor-pointer;
         background: linear-gradient(
             to right,

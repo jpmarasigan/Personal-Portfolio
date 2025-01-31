@@ -10,7 +10,7 @@ const allProjectDetails = [
         details: "An E-Commerce Role-Based Access Control (RBAC) System designed to manage users, orders, products, and a MySQL database through an Admin and User interface. It offers two types of roles: Admin and User. The system allows the Admin to manage products, users, and orders, while the User can browse and place orders",
         liveDemo: "liveDemo",
         githubLink: "https://github.com/jpmarasigan/E-Commerce-Role-Based-Access-Control-System",
-        technologyUsed: ['HTML', 'CSS', 'JavaScript', 'PHP', 'SQL', 'XAMPP', 'MySQL'],  
+        technologyUsed: ['HTML', 'CSS', 'JavaScript', 'PHP', 'SQL', 'REST API', 'XAMPP', 'MySQL'],  
         keyFeatures: [
             'Assigns different capabilities to Admin and User roles, ensuring secure and managed access to various functionalities', 
             'Provides a comprehensive overview of metrics and data using Chart.js', 
@@ -142,7 +142,7 @@ const ProjectDetails = ({bgParam} : {bgParam:JSX.Element}) => {
                         </div>
                         <div className="col col-2">
                             <div className="thumbnail-container">
-                            <img src={projectDetails.thumbnail} alt="project image" />
+                                <img src={projectDetails.thumbnail} alt="project image" />
                             </div>
                             <div className="key-features-container">
                                 <div className="title">

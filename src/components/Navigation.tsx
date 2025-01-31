@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Hamburger from "../components/Hamburger";
+import Hamburger from "./Hamburger";
 import "../styles/Navigation.css";
 
 const NavButton = () => {
@@ -20,17 +20,20 @@ const NavButton = () => {
 
 const Navigation = () => {
     const [scrolling, setScrolling] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-
-            if (currentScrollY > lastScrollY)
-                setIsVisible(false);    // Scrolling down
-            else
-                setIsVisible(true);     // Scrolling up
+            
+            if (!isHovered) {
+                if (currentScrollY > lastScrollY)
+                    setIsVisible(false);    // Scrolling down
+                else
+                    setIsVisible(true);     // Scrolling up
+            }
 
             // Remove navigation background if at the top of webpage
             if (window.scrollY > 0) 
@@ -46,10 +49,17 @@ const Navigation = () => {
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, [lastScrollY]);
+    }, [lastScrollY, isHovered]);
 
     return (
-        <div className={`navbar ${scrolling ? "scrolled" : ""} ${isVisible ? "translate-y-0" : "-translate-y-full"} z-50`}>
+        <div 
+            className={`navbar z-50
+                ${scrolling ? "scrolled" : ""} 
+                ${isVisible ? "translate-y-0" : "-translate-y-full"}`
+            }
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
             <div className="nav-container">
                 <div className="flex relative mx-[5rem] max-980:w-[90%] max-980:mx-auto max-1140:flex-initial items-center z-50">
                     <nav className="flex justify-between mx-auto">
@@ -57,7 +67,7 @@ const Navigation = () => {
                         <ul className="flex gap-x-14 max-980:gap-x-10 p-8 mmin-1024:mx-auto text-customLightGray font-normal text-lg">
                             <li className="hover:underline"><a href="#home">HOME</a></li>
                             <li className="hover:underline"><a href="#services">SERVICES</a></li>
-                            <li className="hover:underline"><a href="#portfolio">PORFOLIO</a></li>
+                            <li className="hover:underline"><a href="#portfolio">PORTFOLIO</a></li>
                             <li className="hover:underline"><a href="#">SKILL</a></li>
                             <li className="hover:underline"><a href="#">CONTACT</a></li>
                         </ul>
@@ -66,7 +76,13 @@ const Navigation = () => {
                     <NavButton />
                 </div>
             </div>
-            <Hamburger />
+            <Hamburger 
+                isVisible={isVisible}
+                scrolling={scrolling}
+                setScrolling={setScrolling}
+                lastScrollY={lastScrollY}
+                setLastScrollY={setLastScrollY}
+            />
         </div>
     )
 }
