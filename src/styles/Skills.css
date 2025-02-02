@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components; 
+@tailwind utilities;
+
+@layer components {
+    .skills-section {
+        @apply w-full h-fit max-w-[85rem] mx-auto p-12 z-50;
+    }
+
+    .skills-container {
+        @apply h-full w-full min-1024:px-28;
+    }
+
+    .title-container {
+        @apply mb-6;
+    }
+
+    .title-container h3 {
+        @apply text-center uppercase text-2xl max-600:text-1xl font-anton bg-clip-text text-transparent bg-gradient-to-r;
+        @apply max-1024:text-[3.5rem];
+        background-image: linear-gradient(to right, var(--custom-white-color), var(--custom-purple-color));
+    }
+
+    .title-container p {
+        @apply text-lg font-robotoCondensed font-light text-customLightGray mt-[-10px];
+        text-transform: none;
+    }
+
+    .tech-stack-container {
+        @apply flex flex-wrap justify-center mx-auto gap-6;
+    }
+
+    .skill {
+        @apply h-fit w-fit flex flex-col justify-center items-center p-4 rounded-xl;
+        background-color: rgba(243, 234, 234, 0.1);
+        backdrop-filter: blur(30px);
+    }
+
+    .skill img {
+        @apply w-[7rem] h-auto mb-2 max-600:w-[6rem];
+    }
+
+    .skill p {
+        @apply text-customLightGray font-[350] font-robotoCondensed tracking-normal;
+    }
+}

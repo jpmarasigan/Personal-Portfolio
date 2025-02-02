@@ -104,7 +104,7 @@ const ProjectDetails = ({bgParam} : {bgParam:JSX.Element}) => {
                 <div className="nav-col">
                     <div 
                         className="back-button" onClick={handleBackClick}>
-                        <img src="/images/arrow-icon.svg" />
+                        <img src="/images/assets/arrow-icon.svg" />
                         <p>Back</p>
                     </div>
                 </div>
@@ -117,18 +117,18 @@ const ProjectDetails = ({bgParam} : {bgParam:JSX.Element}) => {
 
                             <div className="link-container">
                                 <a className="button-link">
-                                    <img src="/images/link-icon.svg" />
+                                    <img src="/images/assets/link-icon.svg" />
                                     <p>Live Demo</p>
                                 </a>
                                 <a href={projectDetails.githubLink} target="_blank" className="button-link">
-                                    <img src="/images/github-icon.svg" />
+                                    <img src="/images/assets/github-icon.svg" />
                                     <p>GitHub</p>
                                 </a>
                             </div>
 
                             <div className="technology-used-container">
                                 <div className="title">
-                                    <img src="/images/technology-icon.svg" />
+                                    <img src="/images/assets/technology-icon.svg" />
                                     <p>Technologies Used</p>
                                 </div>
                                 <div className="technologies">
@@ -146,14 +146,14 @@ const ProjectDetails = ({bgParam} : {bgParam:JSX.Element}) => {
                             </div>
                             <div className="key-features-container">
                                 <div className="title">
-                                    <img src="/images/link-icon.svg"/>
+                                    <img src="/images/assets/link-icon.svg"/>
                                     <h3>Key Features</h3>
                                 </div>
                                 <ul>
                                     {projectDetails.keyFeatures.map((feature, index) => {
                                         return (
                                             <div key={index} className="feature">
-                                                <img src="/images/star-icon.svg" alt="star icon" />
+                                                <img src="/images/assets/star-icon.svg" alt="star icon" />
                                                 <li key={index}>{feature}</li> 
                                             </div>  
                                         )

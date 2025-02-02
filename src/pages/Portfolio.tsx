@@ -118,7 +118,7 @@ const PortfolioShowcase = () => {
                                 className={activeContent === 'projects' ? 'active' : ''}
                                 >
                                     <img 
-                                        src="images/projects-icon.svg" 
+                                        src="images/assets/projects-icon.svg" 
                                         alt="Project Icon"
                                         width={20}
                                         >    
@@ -132,7 +132,7 @@ const PortfolioShowcase = () => {
                                 className={activeContent === 'certifications' ? 'active' : ''}
                                 >
                                 <img
-                                    src="images/certificate-icon.svg"
+                                    src="images/assets/certificate-icon.svg"
                                     alt="Certication Icon"
                                     width={25}
                                     >

@@ -1,6 +1,6 @@
 import '../styles/Home.css'; // Import the new CSS file
 
-const profileImage = 'images/profileImage.png';
+const profileImage = 'images/assets/profileImage.png';
 
 const ProfileInfoSection = () => {
     return (

@@ -7,7 +7,7 @@ const NavButton = () => {
         <div>
             <a className="absolute max-1140:static max-1140:transform-none max-1140:h-1/2 flex items-center justify-center top-1/2 right-0 transform -translate-y-1/2 text-white text-lg font-medium rounded-tr-xl rounded-bl-xl bg-gradient-to-r from-buttonColorStart to-buttonColorEnd p-4">
                 <img 
-                    src="/images/arrow-icon.svg" 
+                    src="/images/assets/arrow-icon.svg" 
                     alt="Arrow Icon"
                     width={36}
                     className="mr-3">    

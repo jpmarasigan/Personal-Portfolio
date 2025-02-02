@@ -5,7 +5,9 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import Portfolio from "./pages/Portfolio";
 import ProjectDetails from "./pages/ProjectDetails";
+import Skills from "./pages/Skills";
 import Background from './components/Background';
+
 
 const Main = () => {
     return (
@@ -15,11 +17,12 @@ const Main = () => {
                 backgroundColor: `var(--background-color1)`,
             }}
         >   
-            <Background />
             <Navigation />
             <Home />
             <Services />
             <Portfolio />
+            <Skills />
+            <Background />
         </div>
     )
 }
