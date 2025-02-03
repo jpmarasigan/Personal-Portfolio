@@ -9,8 +9,14 @@
     }
 
     .navbar.scrolled {
-        background: rgba(40,43,50,0.4);
+        background-color: rgba(40, 43, 50, 0.4);
         backdrop-filter: blur(30px);
+    }
+
+    @media (max-width: 800px) {
+        .navbar.scrolled {
+            background-color: rgba(40, 43, 50, 0.2);
+        }
     }
 
     .nav-container {

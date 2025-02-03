@@ -27,12 +27,13 @@ const Navigation = () => {
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-            
+            console.log(lastScrollY, currentScrollY);
+
             if (!isHovered) {
-                if (currentScrollY > lastScrollY)
-                    setIsVisible(false);    // Scrolling down
-                else
-                    setIsVisible(true);     // Scrolling up
+                if (currentScrollY > lastScrollY && currentScrollY - lastScrollY > 10)
+                    setIsVisible(false);    // Not visible only when scrolling down quickly
+                else if (currentScrollY < lastScrollY)
+                    setIsVisible(true);     // Visible only when scrolling up
             }
 
             // Remove navigation background if at the top of webpage
@@ -68,7 +69,7 @@ const Navigation = () => {
                             <li className="hover:underline"><a href="#home">HOME</a></li>
                             <li className="hover:underline"><a href="#services">SERVICES</a></li>
                             <li className="hover:underline"><a href="#portfolio">PORTFOLIO</a></li>
-                            <li className="hover:underline"><a href="#">SKILL</a></li>
+                            <li className="hover:underline"><a href="#skills">SKILLS</a></li>
                             <li className="hover:underline"><a href="#">CONTACT</a></li>
                         </ul>
                     </nav>

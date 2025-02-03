@@ -55,7 +55,7 @@ const Hamburger: React.FC<HamburgerProps> = ({ isVisible, scrolling, lastScrollY
                         <div className="nav-divider"></div>
                         <li><a href="#portfolio" onClick={() => setIsActive(!isActive)}>Portfolio</a></li>
                         <div className="nav-divider"></div>
-                        <li><a href="#" onClick={() => setIsActive(!isActive)}>Skill</a></li>
+                        <li><a href="#skills" onClick={() => setIsActive(!isActive)}>Skills</a></li>
                         <div className="nav-divider"></div>
                         <li><a href="#" onClick={() => setIsActive(!isActive)}>Contact</a></li>
                     </ul>
