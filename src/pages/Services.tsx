@@ -47,7 +47,7 @@ const DevelopmentField = () => {
                     I have worked with Python and Flask through school projects,
                     developing back-end functionality and integrating ML/DL model to
                     web applications. My experience includes handling server-side logic,
-                    utlizing models, and integrating databases.
+                    utilizing models, and integrating databases.
                 </p>
             </div>
         </div>
