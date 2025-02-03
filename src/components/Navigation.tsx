@@ -27,7 +27,6 @@ const Navigation = () => {
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-            console.log(lastScrollY, currentScrollY);
 
             if (!isHovered) {
                 if (currentScrollY > lastScrollY && currentScrollY - lastScrollY > 10)
@@ -52,6 +51,24 @@ const Navigation = () => {
         };
     }, [lastScrollY, isHovered]);
 
+    const handleNavClick = (e:React.MouseEvent<HTMLAnchorElement>, targetId:string) => {
+        e.preventDefault();
+        const targetNavSection = document.getElementById(targetId);
+        if(targetNavSection) {
+            const offset = 50;     // Adjust value as needed
+            const navPosition = targetNavSection.getBoundingClientRect().top + window.scrollY;
+            let finalPosition = navPosition;
+
+            if (window.scrollY !== 0)     // If not "home" section (top nav)
+                finalPosition -= offset;
+
+            window.scrollTo({            // Scroll to designated section
+                top: finalPosition,
+                behavior: "smooth",
+            });
+        }
+    }
+
     return (
         <div 
             className={`navbar z-50
@@ -66,10 +83,10 @@ const Navigation = () => {
                     <nav className="flex justify-between mx-auto">
                         {/* Links */}
                         <ul className="flex gap-x-14 max-980:gap-x-10 p-8 mmin-1024:mx-auto text-customLightGray font-normal text-lg">
-                            <li className="hover:underline"><a href="#home">HOME</a></li>
-                            <li className="hover:underline"><a href="#services">SERVICES</a></li>
-                            <li className="hover:underline"><a href="#portfolio">PORTFOLIO</a></li>
-                            <li className="hover:underline"><a href="#skills">SKILLS</a></li>
+                            <li className="hover:underline"><a href="#home" onClick={(e) => handleNavClick(e, 'home')}>HOME</a></li>
+                            <li className="hover:underline"><a href="#services" onClick={(e) => handleNavClick(e, 'services')}>SERVICES</a></li>
+                            <li className="hover:underline"><a href="#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')}>PORTFOLIO</a></li>
+                            <li className="hover:underline"><a href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>SKILLS</a></li>
                             <li className="hover:underline"><a href="#">CONTACT</a></li>
                         </ul>
                     </nav>
