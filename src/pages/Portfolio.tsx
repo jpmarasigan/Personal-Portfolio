@@ -153,7 +153,7 @@ const PortfolioShowcase = () => {
 
 const PortfolioTitle = () => {
     return (
-        <div className="title-container">
+        <div className="title-container sectionObserver">
             <h3>Portfolio</h3>
             <p>Explore my journey through projects and certifications</p>
         </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import '../styles/Hamburger.css';
 
 interface HamburgerProps {
@@ -11,6 +11,7 @@ interface HamburgerProps {
 
 const Hamburger: React.FC<HamburgerProps> = ({ isVisible, scrolling, lastScrollY, setScrolling, setLastScrollY}) => {
     const [isActive, setIsActive] = useState(false);
+    const overlayRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -31,6 +32,26 @@ const Hamburger: React.FC<HamburgerProps> = ({ isVisible, scrolling, lastScrollY
         };
     }, [lastScrollY]);
 
+    // Check if click outside the mobile view overlay menu
+    useEffect(() => {
+        const handleClickOutside = (e: MouseEvent) => {
+            // If click node elemenet outside the ref node element, close the nav
+            if (overlayRef.current && !overlayRef.current.contains(e.target as Node)) {
+                // console.log("Not descendant of", overlayRef.current);
+                setIsActive(false);
+            }
+            // else {
+            //     console.log("Descendant of", overlayRef)
+            // }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    });
+
     return (
         <div className={
             `hamburger-container 
@@ -47,7 +68,7 @@ const Hamburger: React.FC<HamburgerProps> = ({ isVisible, scrolling, lastScrollY
                 <span className="w-10"></span>
             </div>
             <div className={`overlay ${isActive ? "active" : ""}`}>
-                <div className={`menu ${isActive ? "active" : ""}`}>
+                <div ref={overlayRef} className={`menu ${isActive ? "active" : ""}`}>
                     <ul>
                         <li><a href="#home" onClick={() => setIsActive(!isActive)}>Home</a></li>
                         <div className="nav-divider"></div>

@@ -7,9 +7,12 @@ import Portfolio from "./pages/Portfolio";
 import ProjectDetails from "./pages/ProjectDetails";
 import Skills from "./pages/Skills";
 import Background from './components/Background';
+import useSectionObserver from "./hooks/useSectionObserver";
 
 
 const Main = () => {
+    useSectionObserver();
+    
     return (
         <div 
             className="relative"

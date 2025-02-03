@@ -58,3 +58,25 @@
         @apply font-anton text-xl;
     }
 }
+
+
+/* Scroll Animation */
+.title-container {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.title-container.intersected {
+    animation: scrollIn 3s forwards;
+}
+
+@keyframes scrollIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

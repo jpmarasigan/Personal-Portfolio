@@ -2,7 +2,7 @@ import '../styles/Services.css';
 
 const Statistics = () => {
     return (
-        <div className="statistics">
+        <div className="statistics sectionObserver">
             <div className="stats">
                 <span>03</span> years of experience
             </div>
@@ -18,7 +18,7 @@ const Statistics = () => {
 
 const DevelopmentField = () => {
     return (
-        <div className="development-container">
+        <div className="development-container sectionObserver">
             <div className="development">
                 <h3 className="development-title">Front-end Web Development</h3>
                 <span>HTML, CSS, JavaScript, TailwindCSS</span>
@@ -65,7 +65,7 @@ const ServicesSection = () => {
 
 const ServicesTitle = () => {
     return (
-        <div className="title-container">
+        <div className="title-container sectionObserver">
             <span className="title">
                 Your Services
             </span>

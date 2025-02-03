@@ -31,7 +31,7 @@ const SkillShowcase = () => {
 
 const SkillTitle = () => {
     return (
-        <div className="title-container">
+        <div className="title-container sectionObserver">
             <h3>Tech Stack</h3>
             <p>Discover the technologies and tools I've mastered through hands-on projects and certifications</p>
         </div>
