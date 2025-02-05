@@ -1,6 +1,22 @@
 import '../styles/Home.css'; // Import the new CSS file
-
+import { motion, Variants } from 'framer-motion';
 const profileImage = 'images/assets/profileImage.png';
+
+const customVariant = (direction: "x" | "y", value: number):Variants => ({
+    offscreen: {
+        [direction]: value,
+        opacity: 0,
+    },
+    onscreen: {
+        [direction]: 0,
+        opacity: 1,
+        transition: {
+            type: "tween",
+            ease: "easeOut",
+            duration: 0.6,      
+        }
+    }
+}) as Variants;
 
 const ProfileInfoSection = () => {
     return (
@@ -46,12 +62,26 @@ const ProfileImageSection = () => {
                 />
             </div>
             <div className="backdropDesign"></div>
-            <div className="software-text">
+            <motion.div 
+                className="software-text"
+                key="motion-software-text"
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: false, amount: 0.8 }} 
+                variants={ customVariant("x", -200) }
+            >
                 SOFTWARE
-            </div>
-            <div className="engineer-text">
+            </motion.div>
+            <motion.div 
+                className="engineer-text"
+                key="motion-engineer-text"
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: false, amount: 0.8 }} 
+                variants={ customVariant("x", 200) }
+            >
                 ENGINEER
-            </div>
+            </motion.div>
         </>
     )
 }

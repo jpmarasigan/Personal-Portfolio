@@ -7,7 +7,7 @@ const titleVariants: Variants = {
         y: 30,
         opacity: 0
     },
-    onscreen: {
+    onscreen: {         
         y: 0,
         opacity: 1,
         transition: {
@@ -72,8 +72,8 @@ const customVariant = (direction: "x" | "y", value: number):Variants => ({
 const Statistics = () => {
     return (
         <motion.div 
+            key="motion-statistics"
             className="statistics"
-            key="statistics"
         >
             <motion.div 
                 className="stats"
@@ -109,8 +109,8 @@ const Statistics = () => {
 const DevelopmentField = () => {
     return (
         <motion.div 
+            key="motion-development" 
             className="development-container"
-            key="development" 
         >
             <motion.div 
                 className="development" 
@@ -211,12 +211,12 @@ const ServicesSection = () => {
 const ServicesTitle = () => {
     return (
         <motion.div 
+            key="motion-title"
             className="title-container"
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.4 }}
             variants={ titleVariants }
-            key="title" // Add unique key
         >
             <span className="title">
                 Your Services
