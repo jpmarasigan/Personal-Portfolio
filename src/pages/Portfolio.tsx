@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../styles/Portfolio.css';
 
@@ -153,10 +154,13 @@ const PortfolioShowcase = () => {
 
 const PortfolioTitle = () => {
     return (
-        <div className="title-container sectionObserver">
+        <motion.div 
+            whileTap={{ scale: 1.1 }}
+            className="title-container"
+        >
             <h3>Portfolio</h3>
             <p>Explore my journey through projects and certifications</p>
-        </div>
+        </motion.div>
     )
 }
 
