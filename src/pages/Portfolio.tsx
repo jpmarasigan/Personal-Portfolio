@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { titleVariant, customSpringVariant } from '../hooks/useVariant';
 import '../styles/Portfolio.css';
 
 const myprojects = [
@@ -63,9 +64,19 @@ const handleProjectClick = () => {
 
 const content: ContentType = {
     projects: 
-        <div className="projects-container">
-            {myprojects.map((project) => (
-                <div key={project.id} className='project'>
+        <motion.div 
+            className="projects-container"
+            variants={ customSpringVariant('x', 100) }
+        >
+            {myprojects.map((project, index) => (
+                <motion.div 
+                    key={project.id} 
+                    className='project'
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={ customSpringVariant('x', 50, index * 0.03 ) }
+                >
                     <div className="details">
                         <img src={project.image} alt="project thumbnail" />
                         <h3>{project.title}</h3>
@@ -78,9 +89,9 @@ const content: ContentType = {
                             </Link>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             ))}
-        </div>,
+        </motion.div>,
     certifications: 
     <div className="certificates-container">
         {mycertificates.map((certificate) => (
@@ -103,10 +114,10 @@ const content: ContentType = {
 const PortfolioShowcase = () => {
     const [activeContent, setActiveContent] = useState<keyof ContentType>('projects');  
     
-    useEffect(() => {
-        const savedPosition = sessionStorage.getItem("scrollPosition");
-        if (savedPosition) { window.scroll(0, parseInt(savedPosition, 10))};
-    })
+    // useEffect(() => {
+    //     const savedPosition = sessionStorage.getItem("scrollPosition");
+    //     if (savedPosition) { window.scroll(0, parseInt(savedPosition, 10))};
+    // })
 
     return (
         <div className='portfolio-showcase'>
@@ -155,8 +166,12 @@ const PortfolioShowcase = () => {
 const PortfolioTitle = () => {
     return (
         <motion.div 
-            whileTap={{ scale: 1.1 }}
+            key="motion-portfolio-title"
             className="title-container"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.4 }}
+            variants={ titleVariant }
         >
             <h3>Portfolio</h3>
             <p>Explore my journey through projects and certifications</p>

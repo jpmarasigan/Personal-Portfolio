@@ -52,6 +52,25 @@ const Hamburger: React.FC<HamburgerProps> = ({ isVisible, scrolling, lastScrollY
         };
     });
 
+    const handleNavClick = (e:React.MouseEvent<HTMLAnchorElement>, targetId:string) => {
+        e.preventDefault();
+        
+        setIsActive(!isActive)
+
+        const targetNavSection = document.getElementById(targetId);
+        if(targetNavSection) {
+            const offset = 50;     // Adjust value as needed
+            const navPosition = targetNavSection.getBoundingClientRect().top + window.scrollY;
+            let finalPosition = navPosition - offset;
+            finalPosition = finalPosition < 0 ? 0 : finalPosition;
+
+            window.scrollTo({            // Scroll to designated section
+                top: finalPosition,
+                behavior: "smooth",
+            });
+        }
+    }
+
     return (
         <div className={
             `hamburger-container 
@@ -70,15 +89,15 @@ const Hamburger: React.FC<HamburgerProps> = ({ isVisible, scrolling, lastScrollY
             <div className={`overlay ${isActive ? "active" : ""}`}>
                 <div ref={overlayRef} className={`menu ${isActive ? "active" : ""}`}>
                     <ul>
-                        <li><a href="#home" onClick={() => setIsActive(!isActive)}>Home</a></li>
+                        <li><a href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
                         <div className="nav-divider"></div>
-                        <li><a href="#services" onClick={() => setIsActive(!isActive)}>Services</a></li>
+                        <li><a href="#services" onClick={(e) => handleNavClick(e, 'services')}>Services</a></li>
                         <div className="nav-divider"></div>
-                        <li><a href="#portfolio" onClick={() => setIsActive(!isActive)}>Portfolio</a></li>
+                        <li><a href="#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')}>Portfolio</a></li>
                         <div className="nav-divider"></div>
-                        <li><a href="#skills" onClick={() => setIsActive(!isActive)}>Skills</a></li>
+                        <li><a href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</a></li>
                         <div className="nav-divider"></div>
-                        <li><a href="#" onClick={() => setIsActive(!isActive)}>Contact</a></li>
+                        <li><a href="#" onClick={(e) => handleNavClick(e, 'home')}>Contact</a></li>
                     </ul>
                 </div>
             </div>

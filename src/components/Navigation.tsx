@@ -51,16 +51,15 @@ const Navigation = () => {
         };
     }, [lastScrollY, isHovered]);
 
+
     const handleNavClick = (e:React.MouseEvent<HTMLAnchorElement>, targetId:string) => {
         e.preventDefault();
         const targetNavSection = document.getElementById(targetId);
         if(targetNavSection) {
             const offset = 50;     // Adjust value as needed
             const navPosition = targetNavSection.getBoundingClientRect().top + window.scrollY;
-            let finalPosition = navPosition;
-
-            if (window.scrollY !== 0)     // If not "home" section (top nav)
-                finalPosition -= offset;
+            let finalPosition = navPosition - offset;
+            finalPosition = finalPosition < 0 ? 0 : finalPosition;
 
             window.scrollTo({            // Scroll to designated section
                 top: finalPosition,

@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+import { titleVariant } from '../hooks/useVariant';
 import '../styles/Skills.css';
 
 const techStack = [
@@ -31,10 +33,17 @@ const SkillShowcase = () => {
 
 const SkillTitle = () => {
     return (
-        <div className="title-container sectionObserver">
+        <motion.div 
+            key="motion-tech-stack"
+            className="title-container sectionObserver"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.4 }}
+            variants={ titleVariant }
+        >
             <h3>Tech Stack</h3>
             <p>Discover the technologies and tools I've mastered through hands-on projects and certifications</p>
-        </div>
+        </motion.div>
     )
 }
 

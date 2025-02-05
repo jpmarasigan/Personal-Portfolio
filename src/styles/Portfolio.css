@@ -11,6 +11,10 @@
         @apply h-full w-full;
     }
     
+    .title-container {
+        @apply text-center;
+    }
+
     .title-container h3 {
         @apply text-center uppercase text-2xl max-600:text-1xl font-anton bg-clip-text text-transparent bg-gradient-to-r;
         @apply max-1024:text-[3.5rem];

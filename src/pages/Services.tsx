@@ -1,73 +1,6 @@
-import '../styles/Services.css';
 import { motion, Variants } from 'framer-motion';
-
-// Define variants
-const titleVariants: Variants = {
-    offscreen: {
-        y: 30,
-        opacity: 0
-    },
-    onscreen: {         
-        y: 0,
-        opacity: 1,
-        transition: {
-            type: 'tween',
-            ease: 'easeOut',
-            duration: 1,
-        }
-    }
-}
-
-const devContainerVariant: Variants = {
-    offscreen: {
-        y: 50,
-        opacity: 0,
-    },
-    onscreen: { 
-        y: 0,
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.3,
-            type: "tween",
-            ease: 'easeOut',
-            duration: 0.8,
-        }
-    }
-}
-
-const springVariant:Variants = {
-    offscreen: {
-        y: 50,
-        opacity: 0,
-    },
-    onscreen: { 
-        y: 0,
-        opacity: 1,
-        transition: {
-            type: "spring",
-            stiffness: 120,
-            bounce: 0.4,
-            duration: 1.2,
-        }
-    }
-}
-
-const customVariant = (direction: "x" | "y", value: number):Variants => ({
-    offscreen: {
-        [direction]: value,
-        opacity: 0,
-    },
-    onscreen: {
-        [direction]: 0,
-        opacity: 1,
-        transition: {
-            type: "tween",
-            ease: "easeOut",
-            duration: 0.6,      
-        }
-    }
-}) as Variants;
-
+import { titleVariant, descSpringVariant, customTweenVariant, containerTweenVariant } from '../hooks/useVariant';
+import '../styles/Services.css';
 
 const Statistics = () => {
     return (
@@ -79,8 +12,8 @@ const Statistics = () => {
                 className="stats"
                 initial="offscreen"
                 whileInView="onscreen"
-                viewport={{ once: true, amount: 0.8 }}
-                variants={ customVariant("x", 100) }
+                viewport={{ once: true }}
+                variants={ customTweenVariant("x", 100, 0.5) }
             >
                 <span>03</span> years of experience
             </motion.div>
@@ -88,8 +21,8 @@ const Statistics = () => {
                 className="stats"
                 initial="offscreen"
                 whileInView="onscreen"
-                viewport={{ once: true, amount: 0.8 }}
-                variants={ customVariant("x", -100) }
+                viewport={{ once: true }}
+                variants={ customTweenVariant("x", -100, 0.5) }
             >
                 <span>06</span> projects completed
             </motion.div>
@@ -97,8 +30,8 @@ const Statistics = () => {
                 className="stats"
                 initial="offscreen"
                 whileInView="onscreen"
-                viewport={{ once: true, amount: 0.8 }}
-                variants={ customVariant("x", 100) }
+                viewport={{ once: true }}
+                variants={ customTweenVariant("x", 100, 0.5) }
             >
                 <span>01</span> satisfied clients
             </motion.div>
@@ -117,21 +50,21 @@ const DevelopmentField = () => {
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true, amount: 0.3 }} 
-                variants={ devContainerVariant }
+                variants={ containerTweenVariant }
             >
                 <motion.h3 
                     className="development-title" 
-                    variants={ springVariant }
+                    variants={ descSpringVariant }
                 >
                     Front-end Web Development
                 </motion.h3>
                 <motion.span
-                    variants={ springVariant }
+                    variants={ descSpringVariant }
                 >
                     HTML, CSS, JavaScript, TailwindCSS
                 </motion.span>
                 <motion.p 
-                    variants={ springVariant }
+                    variants={ descSpringVariant }
                 >
                     I have developed responsive websites using HTML, CSS, JavaScript,
                     and TailwindCSS through various school projects. My experience includes
@@ -146,21 +79,21 @@ const DevelopmentField = () => {
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true, amount: 0.3 }} 
-                variants={ devContainerVariant }
+                variants={ containerTweenVariant }
             >
                 <motion.h3
                     className="development-title" 
-                    variants={ springVariant }
+                    variants={ descSpringVariant }
                 >
                     Back-end Web Development
                 </motion.h3>
                 <motion.span
-                    variants={ springVariant }
+                    variants={ descSpringVariant }
                 >
                     Python, PHP, SQL, XAMPP, MariaDB, Firebase
                 </motion.span>
                 <motion.p
-                    variants={ springVariant }
+                    variants={ descSpringVariant }
                 >
                     I have hands-on experience gained through school projects and
                     personal learning. I focus on creating functional server-side
@@ -174,20 +107,20 @@ const DevelopmentField = () => {
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true, amount: 0.3 }} 
-                variants={ devContainerVariant }
+                variants={ containerTweenVariant }
             >
                 <motion.h3
-                    variants={ springVariant }
+                    variants={ descSpringVariant }
                 >
                     Python Development
                 </motion.h3>
                 <motion.span
-                    variants={ springVariant }
+                    variants={ descSpringVariant }
                 >
                     Python, Flask, PyGame
                 </motion.span>
                 <motion.p
-                    variants={ springVariant }
+                    variants={ descSpringVariant }
                 >
                     I have worked with Python and Flask through school projects,
                     developing back-end functionality and integrating ML/DL model to
@@ -216,7 +149,7 @@ const ServicesTitle = () => {
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.4 }}
-            variants={ titleVariants }
+            variants={ titleVariant }
         >
             <span className="title">
                 Your Services

@@ -15,8 +15,8 @@
         @apply w-full h-full mt-16;
     }
 
-    .title-container {
-        @apply text-center uppercase text-2xl max-600:text-1xl font-anton bg-clip-text text-transparent bg-gradient-to-r;
+    .services .title-container {
+        @apply text-center uppercase text-2xl max-600:text-1xl font-anton bg-clip-text text-transparent bg-gradient-to-r mb-[-2px];
         @apply max-1024:text-[3.5rem];
         background-image: linear-gradient(to right, var(--custom-white-color), var(--custom-purple-color));
     }
@@ -30,7 +30,6 @@
         @apply block min-h-[26rem] w-[360px] m-5 bg-transparent text-customWhite rounded-2xl p-7 overflow-hidden; 
         @apply max-1200:mx-36 max-1200:w-[450px] max-1200:min-h-[20rem];
         @apply max-800:w-[360px] max-800:mx-4;
-
         box-shadow: 2px 2px 7px 2px var(--custom-purple-color);
     }
 

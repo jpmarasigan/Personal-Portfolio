@@ -4,13 +4,13 @@
 
 @layer components {
     .home-section {
-        @apply mx-auto h-screen max-w-[85rem] max-h-[45rem];
-        @apply max-1024:min-h-[40rem] max-1024:max-h-[40rem];
-        @apply max-600:h-[30rem] max-600:min-h-[30rem];
+        @apply mx-auto max-w-[85rem] max-h-[45rem];
+        @apply max-1024:h-[40rem];
+        @apply max-600:h-[30rem];
     }
 
     .content-container {
-        @apply h-full content-center;
+        @apply h-full content-center py-28;
     }
 
     .profile-container {
@@ -32,11 +32,11 @@
     }
 
     .software-text {
-        @apply absolute block text-largest top-[-2rem] left-[13%] max-1024:hidden between-1024-1200:left-[11%] between-1200-1360:left-[16%] max-1360:top-[-1.5rem] max-1360:text-large font-anton text-slate-200;
+        @apply absolute block text-largest top-[-2rem] left-[13%] max-1024:hidden between-1024-1200:left-[11%] between-1200-1360:left-[16%] max-1360:top-[-1.6rem] max-1360:text-large font-anton text-slate-200;
     }
 
     .engineer-text {
-        @apply absolute block text-largest bottom-[-2.2rem] right-[14.5rem] max-1024:hidden between-1024-1200:right-[14%] between-1200-1360:right-[19%] max-1360:text-large font-anton text-slate-200;
+        @apply absolute block text-largest bottom-[-2.2rem] right-[14.5rem] max-1024:hidden between-1024-1200:right-[14%] between-1200-1360:right-[19%] max-1360:bottom-[-1.7rem] max-1360:text-large font-anton text-slate-200;
     }
 
     .profile-info-left {
