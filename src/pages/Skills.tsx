@@ -26,27 +26,24 @@ const initialTechStack: TechStack[] = [
 
 const SkillShowcase = () => {
     const [techStack, setTechStack] = useState<TechStack[]>(initialTechStack);
-    const [viewportAmount, setViewportAmount] = useState(0.7);
-    
+
     const updateTechStack = () => {
         const width = window.outerWidth;
-        console.log(width);
+
         if (width < 744) {
-            setTechStack(prevTechStack => prevTechStack.map(skill => {
+            console.log("744");
+            setTechStack(prevTechStack => prevTechStack.map((skill, index) => {
                 return { ...skill, animateDirection: 'y', value: 50 };
             }));
-        }
-        else if (width < 912) {
+        } else if (width < 912) {
             setTechStack(prevTechStack => prevTechStack.map((skill, index) => {
                 const newValue = index % 4 === 0 ? -150 
                             : index % 4 === 1 ? -100 
                             : index % 4 === 2 ? 100
-                            : 150
+                            : 150;
                 return { ...skill, animateDirection: 'x', value: newValue };
             }));
-        } 
-        else if (width < 1304) {
-            console.log("enter 1304");
+        } else if (width < 1304) {
             setTechStack(prevTechStack => prevTechStack.map((skill, index) => {
                 const newValue = index % 5 === 0 ? -150 
                             : index % 5 === 1 ? -100 
@@ -55,8 +52,7 @@ const SkillShowcase = () => {
                             : 150;
                 return { ...skill, animateDirection: 'x', value: newValue };
             }));
-        } 
-        else {
+        } else {
             setTechStack(initialTechStack);
         }
     };
@@ -74,11 +70,11 @@ const SkillShowcase = () => {
             {techStack.map((skill, index) => {
                 return (
                     <motion.div 
-                        key={index} 
+                        key={`${index}-${skill.animateDirection}-${skill.value}`} 
                         className="skill"
                         initial="offscreen"
                         whileInView="onscreen"
-                        viewport={{ amount: 0.7 }} // Ensure amount is correctly set
+                        viewport={{ amount: 0.7 }}
                         variants={ customTweenVariant(skill.animateDirection, skill.value) }
                     >
                         <img src={skill.src} alt="skill icon" />
