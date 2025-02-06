@@ -1,30 +1,89 @@
+import { useState, useLayoutEffect } from 'react';
 import { motion } from 'framer-motion';
-import { titleVariant } from '../hooks/useVariant';
+import { titleVariant, customTweenVariant } from '../hooks/useVariant';
 import '../styles/Skills.css';
 
-const techStack = [
-    { src: "images/techskills/html-icon.svg", name: "HTML" },
-    { src: "images/techskills/css-icon.svg", name: "CSS"},
-    { src: "images/techskills/javascript-icon.svg", name: "JavaScript"},
-    { src: "images/techskills/tailwind-icon.svg", name: "TailwindCSS"},
-    { src: "images/techskills/reactjs-icon.svg", name: "ReactJS"},
-    { src: "images/techskills/python-icon.svg", name: "Python"},
-    { src: "images/techskills/php-icon.svg", name: "PHP"},
-    { src: "images/techskills/sql-icon.svg", name: "SQL"},
-    { src: "images/techskills/firebase-icon.svg", name: "Firebase"},
-    { src: "images/techskills/mysql-icon.svg", name: "MySQL"},
-    { src: "images/techskills/xampp-icon.svg", name: "XAMPP"},
-]
+interface TechStack {
+    src: string,
+    name: string,
+    animateDirection: "x" | "y",
+    value: number
+}
+
+const initialTechStack: TechStack[] = [
+    { src: "images/techskills/html-icon.svg", name: "HTML", animateDirection: 'x', value: -150},
+    { src: "images/techskills/css-icon.svg", name: "CSS", animateDirection: 'x', value: -100},
+    { src: "images/techskills/javascript-icon.svg", name: "JavaScript", animateDirection: 'x', value: -50},
+    { src: "images/techskills/tailwind-icon.svg", name: "TailwindCSS", animateDirection: 'x', value: 50},
+    { src: "images/techskills/reactjs-icon.svg", name: "ReactJS", animateDirection: 'x', value: 100},
+    { src: "images/techskills/python-icon.svg", name: "Python", animateDirection: 'x', value: 150},
+    { src: "images/techskills/php-icon.svg", name: "PHP", animateDirection: 'x', value: -150},
+    { src: "images/techskills/sql-icon.svg", name: "SQL", animateDirection: 'x', value: -100},
+    { src: "images/techskills/firebase-icon.svg", name: "Firebase", animateDirection: 'x', value: -50},
+    { src: "images/techskills/mysql-icon.svg", name: "MySQL", animateDirection: 'x', value: 50},
+    { src: "images/techskills/xampp-icon.svg", name: "XAMPP", animateDirection: 'x', value: 100},
+];
 
 const SkillShowcase = () => {
+    const [techStack, setTechStack] = useState<TechStack[]>(initialTechStack);
+    const [viewportAmount, setViewportAmount] = useState(0.7);
+    
+    const updateTechStack = () => {
+        const width = window.outerWidth;
+        console.log(width);
+        if (width < 744) {
+            setTechStack(prevTechStack => prevTechStack.map(skill => {
+                return { ...skill, animateDirection: 'y', value: 50 };
+            }));
+        }
+        else if (width < 912) {
+            setTechStack(prevTechStack => prevTechStack.map((skill, index) => {
+                const newValue = index % 4 === 0 ? -150 
+                            : index % 4 === 1 ? -100 
+                            : index % 4 === 2 ? 100
+                            : 150
+                return { ...skill, animateDirection: 'x', value: newValue };
+            }));
+        } 
+        else if (width < 1304) {
+            console.log("enter 1304");
+            setTechStack(prevTechStack => prevTechStack.map((skill, index) => {
+                const newValue = index % 5 === 0 ? -150 
+                            : index % 5 === 1 ? -100 
+                            : index % 5 === 2 ? 50
+                            : index % 5 === 3 ? 100 
+                            : 150;
+                return { ...skill, animateDirection: 'x', value: newValue };
+            }));
+        } 
+        else {
+            setTechStack(initialTechStack);
+        }
+    };
+
+    useLayoutEffect(() => {
+        updateTechStack(); // Call on initial load
+        window.addEventListener('resize', updateTechStack);
+        return () => {
+            window.removeEventListener('resize', updateTechStack);
+        };
+    }, []);
+
     return (
         <div className="tech-stack-container"> 
             {techStack.map((skill, index) => {
                 return (
-                    <div key={index} className="skill">
+                    <motion.div 
+                        key={index} 
+                        className="skill"
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ amount: 0.7 }} // Ensure amount is correctly set
+                        variants={ customTweenVariant(skill.animateDirection, skill.value) }
+                    >
                         <img src={skill.src} alt="skill icon" />
                         <p>{skill.name}</p>
-                    </div>
+                    </motion.div>
                 )
             })}
         </div>
@@ -38,7 +97,7 @@ const SkillTitle = () => {
             className="title-container sectionObserver"
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.5 }}
             variants={ titleVariant }
         >
             <h3>Tech Stack</h3>

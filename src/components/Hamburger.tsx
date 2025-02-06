@@ -12,6 +12,7 @@ interface HamburgerProps {
 const Hamburger: React.FC<HamburgerProps> = ({ isVisible, scrolling, lastScrollY, setScrolling, setLastScrollY}) => {
     const [isActive, setIsActive] = useState(false);
     const overlayRef = useRef<HTMLDivElement>(null);
+    const hamburgerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -35,14 +36,14 @@ const Hamburger: React.FC<HamburgerProps> = ({ isVisible, scrolling, lastScrollY
     // Check if click outside the mobile view overlay menu
     useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
-            // If click node elemenet outside the ref node element, close the nav
-            if (overlayRef.current && !overlayRef.current.contains(e.target as Node)) {
-                // console.log("Not descendant of", overlayRef.current);
+            // if click outside the nav overlay container or the hamburger button, 
+            // close the nav overlay
+            if (
+                overlayRef.current && !overlayRef.current.contains(e.target as Node) &&
+                hamburgerRef.current && !hamburgerRef.current.contains(e.target as Node)
+            ) {
                 setIsActive(false);
             }
-            // else {
-            //     console.log("Descendant of", overlayRef)
-            // }
         };
 
         document.addEventListener('mousedown', handleClickOutside);
@@ -50,7 +51,7 @@ const Hamburger: React.FC<HamburgerProps> = ({ isVisible, scrolling, lastScrollY
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    });
+    }, [isActive]);
 
     const handleNavClick = (e:React.MouseEvent<HTMLAnchorElement>, targetId:string) => {
         e.preventDefault();
@@ -78,7 +79,7 @@ const Hamburger: React.FC<HamburgerProps> = ({ isVisible, scrolling, lastScrollY
             ${isVisible ? "translate-y-0" : "-translate-y-full"}`
         }
         >
-            <div id="nav-icon" 
+            <div ref={hamburgerRef} id="nav-icon" 
                 className={`${isActive ? "active" : ""}`} 
                 onClick={() => {setIsActive(!isActive)}}
             >
