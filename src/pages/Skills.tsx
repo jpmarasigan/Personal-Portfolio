@@ -74,7 +74,7 @@ const SkillShowcase = () => {
                         className="skill"
                         initial="offscreen"
                         whileInView="onscreen"
-                        viewport={{ amount: 0.7 }}
+                        viewport={{ once: true, amount: 0.5 }}
                         variants={ customTweenVariant(skill.animateDirection, skill.value) }
                     >
                         <img src={skill.src} alt="skill icon" />
