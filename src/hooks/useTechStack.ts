@@ -25,20 +25,21 @@ export const useTechStack = () => {
     const [techStack, setTechStack] = useState<TechStack[]>(initialTechStack);
 
     const updateTechStack = () => {
-        const width = window.outerWidth;
+        const width = window.innerWidth;
 
-        if (width < 744) {
+        if (width < 912) {
+            console.log("enter 911");
             setTechStack(prevTechStack => prevTechStack.map((skill, index) => {
                 return { ...skill, animateDirection: 'y', value: 50 };
             }));
-        } else if (width < 912) {
-            setTechStack(prevTechStack => prevTechStack.map((skill, index) => {
-                const newValue = index % 4 === 0 ? -150 
-                            : index % 4 === 1 ? -100 
-                            : index % 4 === 2 ? 100
-                            : 150;
-                return { ...skill, animateDirection: 'x', value: newValue };
-            }));
+        // } else if (width < 912) {
+        //     setTechStack(prevTechStack => prevTechStack.map((skill, index) => {
+        //         const newValue = index % 4 === 0 ? -150 
+        //                     : index % 4 === 1 ? -100 
+        //                     : index % 4 === 2 ? 100
+        //                     : 150;
+        //         return { ...skill, animateDirection: 'x', value: newValue };
+        //     }));
         } else if (width < 1304) {
             setTechStack(prevTechStack => prevTechStack.map((skill, index) => {
                 const newValue = index % 5 === 0 ? -150 
