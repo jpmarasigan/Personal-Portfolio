@@ -46,7 +46,7 @@
     }
 
     .statistics {
-        @apply flex flex-row max-800:flex-col flex-wrap h-fit w-full justify-evenly;
+        @apply flex flex-row max-800:flex-col flex-wrap h-fit w-full justify-evenly overflow-x-hidden;
     }
 
     .statistics div {

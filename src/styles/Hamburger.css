@@ -17,7 +17,7 @@
         transform: rotate(0deg);
         transition: .5s ease-in-out;
         cursor: pointer;
-        z-index: 999;
+        z-index: 998;
     }
 
     #nav-icon span {
@@ -59,7 +59,7 @@
 
     .overlay {
         @apply absolute top-0 -right-full w-full h-[100vh];
-        z-index: 997;
+        z-index: 996;
         background-color: rgba(0, 0, 0, 0.7);
         transition: all 0.1s ease;
     }
@@ -72,7 +72,7 @@
         @apply absolute -right-full w-[70%] h-full rounded-tl-xl rounded-bl-xl pt-32 pr-8 pl-4;
         background-color: #090518;
         transition: all 0.3s ease;
-        z-index: 998;
+        z-index: 997;
         box-shadow: -1px 0 1px -0.5px var(--custom-white-color);
     }
 
