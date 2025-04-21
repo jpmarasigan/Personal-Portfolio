@@ -9,7 +9,7 @@ import ProjectDetails from "./pages/ProjectDetails";
 import Skills from './pages/Skills';
 import Background from './components/Background';
 
-const Main: React.FC<{ isSpotlightZoomedIn: boolean }> = ({ isSpotlightZoomedIn }) => {
+const Main: React.FC = () => {
     return (
         <div className="sticky top-0 left-0"
                 style={{ backgroundColor: `var(--background-color1)` }}
@@ -25,20 +25,18 @@ const Main: React.FC<{ isSpotlightZoomedIn: boolean }> = ({ isSpotlightZoomedIn 
 };
 
 const App: React.FC = () => {
-    const [isSpotlightZoomedIn, setIsSpotlightZoomedIn] = useState(false);
+    // const [isSpotlightZoomedIn, setIsSpotlightZoomedIn] = useState(false);
 
     return (
-        <>
-            <Spotlight isSpotlightZoomedIn={isSpotlightZoomedIn} setIsSpotlightZoomedIn={setIsSpotlightZoomedIn} />
-            <div className="relative h-[530vh]">
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<Main isSpotlightZoomedIn={isSpotlightZoomedIn} />} />
-                        <Route path="/projects/:projectId" element={<ProjectDetails bgParam={<Background />} />} />
-                    </Routes>
-                </BrowserRouter>
-            </div>
-        </>
+        <div className="relative h-[100vh]">
+            {/* <Spotlight isSpotlightZoomedIn={isSpotlightZoomedIn} setIsSpotlightZoomedIn={setIsSpotlightZoomedIn} /> */}
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Main />} />
+                    <Route path="/projects/:projectId" element={<ProjectDetails bgParam={<Background />} />} />
+                </Routes>
+            </BrowserRouter>
+        </div>
     )
 };
 

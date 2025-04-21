@@ -4,11 +4,11 @@
 
 @layer components {
     .skills-section {
-        @apply w-full h-fit max-w-[85rem] mx-auto p-12 z-50;
+        @apply w-full h-full max-w-[85rem] mx-auto p-12 z-50;
     }
 
     .skills-container {
-        @apply h-full w-full min-1024:px-28;
+        @apply h-full w-full min-1024:px-28 overflow-x-hidden;
     }
 
     .title-container {
@@ -27,7 +27,7 @@
     }
 
     .tech-stack-container {
-        @apply flex flex-wrap justify-center mx-auto gap-6;
+        @apply flex flex-wrap justify-center mx-auto gap-6 overflow-hidden;
     }
 
     .skill {

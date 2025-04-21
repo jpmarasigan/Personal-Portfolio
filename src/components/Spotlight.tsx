@@ -26,7 +26,7 @@ const Spotlight: React.FC<SpotlightProps> = ({ isSpotlightZoomedIn, setIsSpotlig
 
     // Update zoom state based on hole size
     useEffect(() => {
-        console.log(holeSize, max_hole_size);
+        // console.log(holeSize, max_hole_size);
         if (holeSize >= max_hole_size) {
             setIsSpotlightZoomedIn(true); 
         } else {
@@ -37,7 +37,7 @@ const Spotlight: React.FC<SpotlightProps> = ({ isSpotlightZoomedIn, setIsSpotlig
     
     return (
         <div 
-             className="fixed h-screen w-screen bg-transparent z-[9999]"
+             className="fixed h-full w-full min-h-[500px] bg-transparent z-[9999]"
              style={{ pointerEvents: 'none' }}      // Allow interactions through the spotlight  
         >
             <svg width="100%" height="100%">

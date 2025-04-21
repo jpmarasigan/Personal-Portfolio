@@ -28,7 +28,6 @@ export const useTechStack = () => {
         const width = window.innerWidth;
 
         if (width < 912) {
-            console.log("enter 911");
             setTechStack(prevTechStack => prevTechStack.map((skill, index) => {
                 return { ...skill, animateDirection: 'y', value: 50 };
             }));
