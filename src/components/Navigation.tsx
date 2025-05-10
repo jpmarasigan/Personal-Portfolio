@@ -82,11 +82,18 @@ const Navigation = () => {
                     <nav className="flex justify-between mx-auto">
                         {/* Links */}
                         <ul className="flex gap-x-14 max-980:gap-x-10 p-8 mmin-1024:mx-auto text-customLightGray font-normal text-lg">
-                            <li className="hover:underline"><a href="#home" onClick={(e) => handleNavClick(e, 'home')}>HOME</a></li>
-                            <li className="hover:underline"><a href="#services" onClick={(e) => handleNavClick(e, 'services')}>SERVICES</a></li>
-                            <li className="hover:underline"><a href="#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')}>PORTFOLIO</a></li>
-                            <li className="hover:underline"><a href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>SKILLS</a></li>
-                            <li className="hover:underline"><a href="#">CONTACT</a></li>
+                            {['home', 'services', 'portfolio', 'skills'].map((section) => (
+                                <li key={section} className="relative group">
+                                    <a 
+                                        href={`#${section}`}
+                                        onClick={(e) => handleNavClick(e, section)}
+                                    >
+                                        {section.toUpperCase()}
+                                        <span className="underline-hover"></span>
+                                    </a>
+                                </li>
+                            ))}                            
+                            <li><a className="cursor-default" href="#">CONTACT</a></li>
                         </ul>
                     </nav>
                     {/* Button for Recruit */}

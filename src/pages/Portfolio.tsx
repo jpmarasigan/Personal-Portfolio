@@ -46,11 +46,18 @@ const myprojects = [
 const mycertificates = [
     {
         id: "cert1",
+        title: "Meta Advanced React",
+        summary: "I gained in-depth knowledge of advanced React concepts, such as advanced and custom hooks, context API, and performance optimization strategies. This certification highlights my ability to build efficient and scalable React applications using modern development practices.",
+        image: "images/certificates/meta-advanced-react.png",
+        url: "https://www.coursera.org/account/accomplishments/verify/WC22QAS4G964"
+    },
+    {
+        id: "cert2",
         title: "Responsive Web Design",
         summary: "I gained hands-on experience in HTML, CSS, and media queries, ensuring optimal viewing across devices from desktops to mobile phones. This certification highlights my knowledge of mobile-first design principles, flexbox, and CSS grid layout.",
         image: "images/certificates/responsive-web-design.png",
         url: "https://www.freecodecamp.org/certification/jay_peez/responsive-web-design",
-    }
+    },
 ]
 
 type ContentType = {
@@ -75,7 +82,7 @@ const content: ContentType = {
                     initial="offscreen"
                     whileInView="onscreen"
                     viewport={{ once: true, amount: 0.3 }}
-                    variants={ customSpringVariant('x', 50, index * 0.03 ) }
+                    variants={ customSpringVariant('x', 50, index * 0.03) }
                 >
                     <div className="details">
                         <img src={project.image} alt="project thumbnail" />
@@ -94,8 +101,15 @@ const content: ContentType = {
         </motion.div>,
     certifications: 
     <div className="certificates-container">
-        {mycertificates.map((certificate) => (
-            <div key={certificate.id} className='certificate'>
+        {mycertificates.map((certificate, index) => (
+            <motion.div 
+                key={certificate.id} 
+                className='certificate'
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.3}}
+                variants={ customSpringVariant('x', 50, index * 0.03) }
+            >
                 <div className="details">
                     <img src={certificate.image} alt="certificate thumbnail" />
                     <h3>{certificate.title}</h3>
@@ -106,7 +120,7 @@ const content: ContentType = {
                         <p>View Certificate<span>&gt;</span></p>
                     </a>
                 </div>
-            </div>
+            </motion.div>
         ))}
     </div>
 };
