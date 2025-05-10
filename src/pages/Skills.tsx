@@ -1,10 +1,10 @@
-import { useState, useLayoutEffect } from 'react';
 import { motion } from 'framer-motion';
-import { titleVariant, customTweenVariant } from '../hooks/useVariant';
+import { titleVariant, containerTweenVariant } from '../hooks/useVariant';
 import { useTechStack } from '../hooks/useTechStack'; // Ensure correct import path
 import '../styles/Skills.css';
 
 interface TechStack {
+    id: string,
     src: string,
     name: string,
     animateDirection: "x" | "y",
@@ -16,15 +16,17 @@ const SkillShowcase = () => {
     
     return (
         <div className="tech-stack-container"> 
-            {techStack.map((skill: TechStack, index: number) => { // Explicitly type 'skill' as 'TechStack'
+            {techStack.map((skill: TechStack) => { // Explicitly type 'skill' as 'TechStack'
+                console.log(skill.id);
                 return (
                     <motion.div 
-                        key={`${index}-${skill.animateDirection}-${skill.value}`} 
+                        key={`${skill.id}-${skill.animateDirection}-${skill.value}`} 
                         className="skill"
                         initial="offscreen"
                         whileInView="onscreen"
                         viewport={{ once: true, amount: 0.5 }}
-                        variants={ customTweenVariant(skill.animateDirection, skill.value) }
+                        // variants={ containerTweenVariant(skill.animateDirection, skill.value) }    // commented out for having bugs in large screen width
+                        variants={ containerTweenVariant }
                     >
                         <img src={skill.src} alt="skill icon" />
                         <p>{skill.name}</p>

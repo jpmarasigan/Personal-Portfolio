@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Spotlight from './components/Spotlight';
 import Navigation from "./components/Navigation";
 import Home from './pages/Home';
 import Services from './pages/Services';
@@ -11,7 +10,7 @@ import Background from './components/Background';
 
 const Main: React.FC = () => {
     return (
-        <div className="sticky top-0 left-0"
+        <div className="relative"
                 style={{ backgroundColor: `var(--background-color1)` }}
         >
             <Navigation />
