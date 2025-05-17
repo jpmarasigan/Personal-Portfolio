@@ -43,7 +43,7 @@ const ContactInfo = () => {
 const ContactTitle = () => {
     return (
         <div className="title-container">
-            <h3>CONTACT ME</h3>
+            <h3>CONTACT ME (in progress)</h3>
             <p>You can reach me by email, phone, or by filling out the form below. I’m happy to answer any questions.</p>
         </div>
     )
