@@ -22,7 +22,7 @@
     }
 
     .title-container p {
-        @apply text-lg font-robotoCondensed font-light text-customLightGray mt-[-10px];
+        @apply text-md font-robotoCondensed font-light text-customLightGray mt-[-10px];
         text-transform: none;
     }
 

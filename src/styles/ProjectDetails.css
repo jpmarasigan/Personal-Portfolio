@@ -31,7 +31,7 @@
     }
 
     .project-details-container {
-        @apply max-w-[60rem] grid grid-cols-2 max-800:grid-cols-1 gap-x-12 mx-auto font-robotoCondensed text-lg;
+        @apply max-w-[60rem] grid grid-cols-2 max-800:grid-cols-1 gap-x-12 mx-auto font-robotoCondensed text-md;
     }
 
     .col-1, .col-2 {
@@ -142,7 +142,7 @@
     }
 
     .key-features-container .title h3 {
-        @apply font-bold text-lg;
+        @apply font-bold text-md;
     }
 
     .key-features-container .title img {

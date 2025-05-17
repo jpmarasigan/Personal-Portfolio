@@ -50,7 +50,7 @@
     }
 
     .statistics div {
-        @apply flex items-center justify-center gap-3 max-800:p-4 flex-1 uppercase text-customPurple font-robotoCondensed font-normal text-lg; 
+        @apply flex items-center justify-center gap-3 max-800:p-4 flex-1 uppercase text-customPurple font-robotoCondensed font-normal text-md; 
     }
 
     .statistics div span {
