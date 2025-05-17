@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .contact-section {
+        @apply mx-auto h-fit max-w-[85rem] p-12;
+        /* outline: 1px solid red; */
+    }
+
+    .contact-container {
+        @apply h-full w-full;
+        @apply grid grid-cols-[65%_35%] gap-4;
+    }
+
+    .contact-container .title-container {
+        @apply w-[60%];
+    }
+    
+    .contact-container .title-container h3 {
+        @apply text-left text-2xl uppercase max-600:text-1xl font-anton bg-clip-text text-transparent bg-gradient-to-r;
+        @apply max-1024:text-[3.5rem];
+        background-image: linear-gradient(to right, var(--custom-white-color), var(--custom-purple-color));
+    }
+
+    .contact-container .title-container p, .contact-container .engagement-container > div > p {
+        @apply text-left text-lg font-robotoCondensed font-light text-customLightGray mt-[20px];
+        text-transform: none;
+    }
+
+    .contact-container .contact-info-container {
+        @apply flex flex-col w-[60%] gap-4 mb-8;
+    }
+
+    .contact-container .contact-info-container p {
+        @apply text-left text-lg font-robotoCondensed font-medium text-customLightGray;
+    }
+
+    .contact-container .engagement-container {
+        @apply flex flex-row gap-8;
+        /* outline: 1px solid green; */
+    }
+
+    .contact-container .engagement-container > div {
+        @apply: flex-1 text-wrap;
+        /* outline: 1px solid blue; */
+    }
+
+    .contact-container .engagement-container > div > p:first-child {
+        @apply font-medium text-md;
+    }
+}
