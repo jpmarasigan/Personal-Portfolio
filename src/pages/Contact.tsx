@@ -18,6 +18,33 @@ const engagementSections = [
     },
 ]
 
+const ContactForm = () => {
+    return (
+        <div className="contact-form-container">
+            <h3 className="text-left">Get In Touch</h3>
+            <p className="text-left">You can reach me anytime</p>
+            <form>
+                <div className="flex gap-6 mt-10">
+                    <input type="text" id="firstname" name="firstname" placeholder="First Name" className="form-input" />
+                    <input type="text" id="lastname" name="lastname" placeholder="Last Name" className="form-input" />
+                </div>
+                <input type="email" id="email" name="email" placeholder="Email" className="form-input"></input>
+
+                <div className="flex">
+                    <select>
+                        <option>+63</option>
+                        <option>+1</option>
+                        <option>+44</option>
+                    </select>
+                    <input type="tel" placeholder="Phone number" className="form-input" />
+                </div>
+                <textarea placeholder="Reach Out, I'd Love to Hear From You!" className="form-textarea"></textarea>
+                <button type="submit" className="form-submit">Submit</button>
+            </form>
+        </div>
+    )
+}
+
 const ContactEngagementInfo = () => {
     return (
         <div className="engagement-container">
@@ -59,10 +86,7 @@ const Contact = () => {
                     <ContactEngagementInfo />
                 </div>  
                 <div>
-
-                </div>
-                <div className="col-span-2">
-
+                    <ContactForm />
                 </div>
             </div>
         </div>

@@ -5,48 +5,99 @@
 @layer components {
     .contact-section {
         @apply mx-auto h-fit max-w-[85rem] p-12;
-        /* outline: 1px solid red; */
     }
 
     .contact-container {
         @apply h-full w-full;
-        @apply grid grid-cols-[65%_35%] gap-4;
+        @apply grid md:grid-cols-1 xl:grid-cols-[minmax(0,_60%)_minmax(0,_40%)] gap-8;
     }
 
     .contact-container .title-container {
-        @apply w-[60%];
+        @apply xl:w-[60%];
     }
     
     .contact-container .title-container h3 {
         @apply text-left text-2xl uppercase max-600:text-1xl font-anton bg-clip-text text-transparent bg-gradient-to-r;
         @apply max-1024:text-[3.5rem];
+        @apply text-center xl:text-left;
         background-image: linear-gradient(to right, var(--custom-white-color), var(--custom-purple-color));
     }
 
     .contact-container .title-container p, .contact-container .engagement-container > div > p {
-        @apply text-left text-lg font-robotoCondensed font-light text-customLightGray mt-[20px];
+        @apply text-left text-md font-robotoCondensed font-light text-customLightGray xl:mt-[20px];
+        @apply text-center xl:text-left;
         text-transform: none;
     }
 
     .contact-container .contact-info-container {
-        @apply flex flex-col w-[60%] gap-4 mb-8;
+        @apply flex justify-around w-[80%] mx-auto mb-8;
+        @apply xl:flex-col xl:w-[60%] xl:mx-0 xl:gap-4;
+        @apply max-800:flex-col max-800:items-center;
     }
 
     .contact-container .contact-info-container p {
-        @apply text-left text-lg font-robotoCondensed font-medium text-customLightGray;
+        @apply text-left text-md font-robotoCondensed font-medium text-customLightGray;
     }
 
     .contact-container .engagement-container {
-        @apply flex flex-row gap-8;
-        /* outline: 1px solid green; */
+        @apply flex flex-col gap-8;
+        @apply min-800:flex-row;
     }
 
     .contact-container .engagement-container > div {
-        @apply: flex-1 text-wrap;
-        /* outline: 1px solid blue; */
+        @apply: w-full text-wrap;
     }
 
     .contact-container .engagement-container > div > p:first-child {
         @apply font-medium text-md;
+    }
+
+    .contact-form-container {
+        @apply max-w-[35rem] mx-auto rounded-2xl bg-customDarkPurple opacity-90 p-8;
+    }
+
+    .contact-form-container h3 {
+        @apply text-left text-customLightGray text-1xl max-600:text-xl font-robotoCondensed tracking-tight;
+        @apply max-1024:text-[3.5rem];
+    }
+
+    .contact-form-container p {
+        @apply text-left text-md font-robotoCondensed font-light text-customLightGray mb-2;
+        text-transform: none;
+    }
+
+    .contact-form-container form {
+        @apply flex flex-col h-full gap-6 text-customLightGray font-robotoCondensed;
+    }
+
+    .contact-form-container form .form-input, .contact-form-container form .form-textarea {
+        @apply w-full py-2 px-3 border-none;
+        @apply bg-transparent outline outline-2 outline-customPurpleOutline;
+    }
+
+    .contact-form-container form select {
+        @apply w-[25%] py-2 px-3 mr-[2px] rounded-tl-xl rounded-bl-xl;
+        @apply bg-transparent outline outline-2 outline-customPurpleOutline;
+    }
+    
+    .contact-form-container form .form-input:not([type="tel"]) {
+        @apply rounded-xl;
+    }
+
+    .contact-form-container form .form-input[type="tel"] {
+        @apply rounded-tr-xl rounded-br-xl;
+    }
+
+    .contact-form-container form .form-textarea {
+        @apply h-32 rounded-xl resize-none;
+    }
+
+    .contact-form-container form .form-submit {
+        @apply py-2 px-4 rounded-2xl text-customWhite text-md;
+        @apply bg-gradient-to-r from-buttonColorEnd to-buttonColorStart;
+    }
+
+    .contact-form-container form input::placeholder, .contact-form-container form textarea::placeholder {
+        @apply opacity-60;
     }
 }
