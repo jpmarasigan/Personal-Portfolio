@@ -14,8 +14,9 @@
     }
 
     .download-button {
-        @apply absolute flex items-center justify-center top-1/2 right-0 transform -translate-y-1/2 text-white text-lg font-medium rounded-tr-xl rounded-bl-xl p-4 overflow-hidden;
-        @apply max-1140:static max-1140:transform-none max-1140:h-1/2;
+        @apply absolute flex items-center justify-center top-1/2 right-0 transform -translate-y-1/2 text-white text-md font-medium rounded-tr-xl rounded-bl-xl p-4 overflow-hidden;
+        @apply max-1200:static max-1140:transform-none max-1140:h-1/2;
+        @apply max-1200:hidden;
         background: radial-gradient(circle at top, #804AEC, #422779);
         background-position: 0% 50%;
         background-size: 200% 200%;

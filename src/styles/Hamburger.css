@@ -85,7 +85,7 @@
     }
 
     .menu li {
-        @apply flex items-center w-full font-robotoCondensed font-medium text-customWhite text-lg;
+        @apply flex items-center w-full font-robotoCondensed font-medium text-customWhite text-md;
     }
 
     .menu li a {
