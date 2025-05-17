@@ -15,6 +15,7 @@
 
     .profile-container {
         @apply flex max-600:h-fit min-1024:relative max-1024:flex-row-reverse items-center h-[28rem] w-full mx-auto mt-12;
+        @apply overflow-hidden;
     }
     
     .profile-image-container {
@@ -60,11 +61,11 @@
     }
 
     .description-text {
-        @apply text-customLightGray font-robotoCondensed font-normal text-lg tracking-tight;
+        @apply text-customLightGray font-robotoCondensed font-normal text-md tracking-tight;
     }
 
     .description-text-right {
-        @apply text-customLightGray text-right font-robotoCondensed font-normal text-lg tracking-tight;
+        @apply text-customLightGray text-right font-robotoCondensed font-normal text-md tracking-tight;
     }
 
     :not(.backdropDesign) {
