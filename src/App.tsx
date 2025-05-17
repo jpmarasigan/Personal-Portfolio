@@ -6,6 +6,7 @@ import Services from './pages/Services';
 import Portfolio from "./pages/Portfolio";
 import ProjectDetails from "./pages/ProjectDetails";
 import Skills from './pages/Skills';
+import Contact from './pages/Contact';
 import Background from './components/Background';
 
 const Main: React.FC = () => {
@@ -18,6 +19,7 @@ const Main: React.FC = () => {
             <Services />
             <Portfolio />
             <Skills />
+            <Contact />
             <Background />
         </div>
     );
