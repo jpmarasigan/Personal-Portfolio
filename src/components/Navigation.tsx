@@ -5,14 +5,17 @@ import "../styles/Navigation.css";
 const NavButton = () => {
     return (
         <div>
-            <a className="absolute max-1140:static max-1140:transform-none max-1140:h-1/2 flex items-center justify-center top-1/2 right-0 transform -translate-y-1/2 text-white text-lg font-medium rounded-tr-xl rounded-bl-xl bg-gradient-to-r from-buttonColorStart to-buttonColorEnd p-4">
+            <a 
+                className="download-button hover:animate-wave" 
+                href="/images/resume/resume.pdf"
+                download="Resume-Marasigan_John_Patrick.pdf">
                 <img 
                     src="/images/assets/arrow-icon.svg" 
                     alt="Arrow Icon"
                     width={36}
                     className="mr-3">    
                 </img>
-                RECRUIT ME
+                MY RESUME
             </a>
         </div>
     )
@@ -82,7 +85,7 @@ const Navigation = () => {
                     <nav className="flex justify-between mx-auto">
                         {/* Links */}
                         <ul className="flex gap-x-14 max-980:gap-x-10 p-8 mmin-1024:mx-auto text-customLightGray font-normal text-lg">
-                            {['home', 'services', 'portfolio', 'skills'].map((section) => (
+                            {['home', 'services', 'portfolio', 'skills', 'contact'].map((section) => (
                                 <li key={section} className="relative group">
                                     <a 
                                         href={`#${section}`}
@@ -93,7 +96,6 @@ const Navigation = () => {
                                     </a>
                                 </li>
                             ))}                            
-                            <li><a className="cursor-default" href="#">CONTACT</a></li>
                         </ul>
                     </nav>
                     {/* Button for Recruit */}

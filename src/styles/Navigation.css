@@ -13,6 +13,24 @@
         backdrop-filter: blur(30px);
     }
 
+    .download-button {
+        @apply absolute flex items-center justify-center top-1/2 right-0 transform -translate-y-1/2 text-white text-lg font-medium rounded-tr-xl rounded-bl-xl p-4 overflow-hidden;
+        @apply max-1140:static max-1140:transform-none max-1140:h-1/2;
+        background: radial-gradient(circle at top, #804AEC, #422779);
+        background-position: 0% 50%;
+        background-size: 200% 200%;
+    }
+
+    .download-button::before {
+        @apply absolute top-0 left-0 w-full h-full backdrop-saturate-200 translate-y-full;
+        @apply transition-transform duration-100;
+        content: ""
+    }
+
+    .download-button:hover::before {
+        @apply translate-y-0;
+    }
+
     @media (max-width: 800px) {
         .navbar.scrolled {
             background-color: rgba(40, 43, 50, 0.2);
@@ -25,5 +43,42 @@
 
     .underline-hover {
         @apply absolute bottom-0 left-0 bg-customLightGray h-[2px] w-full scale-x-0 group-hover:scale-x-100 transition-all origin-center duration-300;
+    }
+}
+
+
+@layer utilities {
+    @keyframes wave {
+        0% {
+            background-position: 0% 50%;
+        }
+        12.5% {
+            background-position: 0% 100%;
+        }
+        25% {
+            background-position: 50% 100%;
+        }
+        37.5% {
+            background-position: 100% 100%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        62.5% {
+            background-position: 100% 0%;
+        }
+        75% {
+            background-position: 50% 0%;
+        }
+        87.5% {
+            background-position: 0% 0%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .animate-wave {
+        animation: wave 1.5s linear infinite;
     }
 }
