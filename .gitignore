@@ -3,6 +3,9 @@
 # files
 test/
 
+# IDE conf
+/.vscode
+
 # dependencies
 /node_modules
 /.pnp
