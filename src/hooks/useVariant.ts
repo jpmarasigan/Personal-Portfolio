@@ -99,3 +99,20 @@ export const customSpringVariant = (direction: "x" | "y", value: number, delay: 
     }
 }) as Variants;
 
+
+export const customVariant = (direction: "x" | "y", value: number):Variants => ({
+    offscreen: {
+        [direction]: value,
+        opacity: 0,
+    },
+    onscreen: {
+        [direction]: 0,
+        opacity: 1,
+        transition: {
+            type: "tween",
+            ease: "easeOut",
+            duration: 0.6,      
+        }
+    }
+}) as Variants;
+
