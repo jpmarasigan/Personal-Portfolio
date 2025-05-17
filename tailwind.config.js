@@ -9,8 +9,8 @@ module.exports = {
     fontSize: {
       sm: '0.8rem',
       base: '1rem',
-      lg: '1.2rem',
-      md: '1.5rem',
+      md: '1.2rem',
+      lg: '1.5rem',
       xl: '2rem',
       '1xl': '3rem',
       '2xl': '4rem',
@@ -26,6 +26,8 @@ module.exports = {
         'customWhite': '#D8D3E1',
         'customLightGray': '#BFB4D6',
         'customBlack': '#13091f',
+        'customDarkPurple': '#1D1331',
+        'customPurpleOutline': '#6A5399',
       },
       borderColor: {
         'defaultPurple': '#804AEC',
