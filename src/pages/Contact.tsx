@@ -1,4 +1,11 @@
 import '../styles/Contact.css';
+import Select, { StylesConfig, ControlProps, CSSObjectWithLabel } from 'react-select';
+
+const countryOptions = [
+    { value: '+63', label: '🇵🇭 +63' },
+    { value: '+1', label: '🇺🇸 +1' },
+    { value: '+44', label: '🇬🇧 +44' },
+];
 
 const engagementSections = [
     {
@@ -19,23 +26,75 @@ const engagementSections = [
 ]
 
 const ContactForm = () => {
+    const customStyles: StylesConfig = {
+        control: (base: CSSObjectWithLabel, state: ControlProps) => ({
+            ...base,
+            width: '105px',
+            backgroundColor: 'transparent',
+            border: '2px solid #6A5399',
+            borderRadius: '12px 0 0 12px',
+            cursor: 'pointer',
+            marginRight: '0.5px',
+            zIndex: 2,
+            boxShadow: 'none',
+            '&:hover': {
+                border: '2px solid #6A5399',
+            }
+        }),
+        option: (base: CSSObjectWithLabel, state: { isSelected: boolean }) => ({
+            ...base,
+            backgroundColor: state.isSelected ? '#804AEC' : 'transparent',
+            color: state.isSelected ? 'white' : '#A1A1AA',
+            cursor: 'pointer',
+            '&:hover': {
+                backgroundColor: 'rgba(128, 74, 236, 0.1)',
+            },
+        }),
+        singleValue: (base: CSSObjectWithLabel) => ({
+            ...base,
+            color: '#A1A1AA',
+        }),
+        menu: (base: CSSObjectWithLabel) => ({
+            ...base,
+            backgroundColor: '#1E1B24',
+            border: '2px solid rgba(128, 74, 236, 0.3)',
+            borderRadius: '12px',
+            overflow: 'hidden'
+        }),
+        dropdownIndicator: (base: CSSObjectWithLabel) => ({
+            ...base,
+            color: '#804AEC',
+            '&:hover': {
+                color: '#804AEC',
+            }
+        }),
+        input: (base: CSSObjectWithLabel) => ({
+            ...base,
+            color: '#A1A1AA'
+        })
+    };
+
     return (
         <div className="contact-form-container">
             <h3 className="text-left">Get In Touch</h3>
             <p className="text-left">You can reach me anytime</p>
             <form>
-                <div className="flex gap-6 mt-10">
+                <div className="form-name-container">
                     <input type="text" id="firstname" name="firstname" placeholder="First Name" className="form-input" />
                     <input type="text" id="lastname" name="lastname" placeholder="Last Name" className="form-input" />
                 </div>
                 <input type="email" id="email" name="email" placeholder="Email" className="form-input"></input>
 
                 <div className="flex">
-                    <select>
-                        <option>+63</option>
-                        <option>+1</option>
-                        <option>+44</option>
-                    </select>
+                    <Select
+                        options={countryOptions}
+                        defaultValue={countryOptions[0]}
+                        isSearchable={false}
+                        styles={customStyles}
+                        components={{
+                            IndicatorSeparator: () => null
+                        }}
+                    />
                     <input type="tel" placeholder="Phone number" className="form-input" />
                 </div>
                 <textarea placeholder="Reach Out, I'd Love to Hear From You!" className="form-textarea"></textarea>
@@ -61,8 +120,22 @@ const ContactEngagementInfo = () => {
 const ContactInfo = () => {
     return (
         <div className="contact-info-container">
-            <p>johnpatrickmarasigan.work@gmail.com</p>
-            <p>+63 909 728 5903</p>
+            <p className="flex gap-3">
+                <img 
+                    src="images/assets/email-icon.svg"
+                    alt="Email icon"
+                    width={25}
+                />
+                johnpatrickmarasigan.work@gmail.com
+            </p>
+            <p className="flex gap-3">
+                <img 
+                    src="images/assets/phone-icon.svg"
+                    alt="Email icon"
+                    width={25}
+                />
+                +63 909 728 5903
+            </p>
         </div>
     )
 }

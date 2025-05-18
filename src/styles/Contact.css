@@ -5,11 +5,12 @@
 @layer components {
     .contact-section {
         @apply mx-auto h-fit max-w-[85rem] p-12;
+        @apply xl:p-4
     }
 
     .contact-container {
         @apply h-full w-full;
-        @apply grid md:grid-cols-1 xl:grid-cols-[minmax(0,_60%)_minmax(0,_40%)] gap-8;
+        @apply grid md:grid-cols-1 xl:grid-cols-[minmax(0,_60%)_minmax(0,_40%)] gap-16;
     }
 
     .contact-container .title-container {
@@ -24,13 +25,17 @@
     }
 
     .contact-container .title-container p, .contact-container .engagement-container > div > p {
-        @apply text-left text-md font-robotoCondensed font-light text-customLightGray xl:mt-[20px];
+        @apply text-left text-md font-robotoCondensed font-light text-customLightGray;
         @apply text-center xl:text-left;
         text-transform: none;
     }
 
+    .contact-container .title-container p {
+        @apply xl:mt-[20px];
+    }
+
     .contact-container .contact-info-container {
-        @apply flex justify-around w-[80%] mx-auto mb-8;
+        @apply flex justify-around w-[100%] mx-auto mb-12 gap-2 opacity-85;
         @apply xl:flex-col xl:w-[60%] xl:mx-0 xl:gap-4;
         @apply max-800:flex-col max-800:items-center;
     }
@@ -45,11 +50,16 @@
     }
 
     .contact-container .engagement-container > div {
-        @apply: w-full text-wrap;
+        @apply w-full text-wrap;
+    }
+
+    .contact-container .engagement-container > div > p:nth-child(2) {
+        @apply mx-auto w-[80%] mt-[-10px] leading-6;
+        @apply xl:w-full;
     }
 
     .contact-container .engagement-container > div > p:first-child {
-        @apply font-medium text-md;
+        @apply font-medium text-[1.3rem];
     }
 
     .contact-form-container {
@@ -70,8 +80,13 @@
         @apply flex flex-col h-full gap-6 text-customLightGray font-robotoCondensed;
     }
 
+    .contact-form-container form .form-name-container {
+        @apply flex gap-6 mt-10;
+        @apply max-600:flex-col;
+    }
+
     .contact-form-container form .form-input, .contact-form-container form .form-textarea {
-        @apply w-full py-2 px-3 border-none;
+        @apply w-full py-2 px-3 border-none z-0;
         @apply bg-transparent outline outline-2 outline-customPurpleOutline;
     }
 
@@ -95,9 +110,51 @@
     .contact-form-container form .form-submit {
         @apply py-2 px-4 rounded-2xl text-customWhite text-md;
         @apply bg-gradient-to-r from-buttonColorEnd to-buttonColorStart;
+        @apply transition-all duration-200;
+    }
+
+    .contact-form-container form .form-submit:active {
+        @apply scale-[0.98] origin-center;
     }
 
     .contact-form-container form input::placeholder, .contact-form-container form textarea::placeholder {
         @apply opacity-60;
+    }
+
+    /* React Select Custom Styles */
+    .select-control {
+        @apply w-[120px] bg-transparent border-2 border-customPurpleOutline/30 rounded-tl-xl rounded-bl-xl cursor-pointer p-[2px];
+    }
+
+    .select-control:hover {
+        @apply border-customPurpleOutline/30;
+    }
+
+    .select-option {
+        @apply bg-transparent text-customLightGray cursor-pointer;
+    }
+
+    .select-option[data-selected="true"] {
+        @apply bg-customPurple text-white;
+    }
+
+    .select-option:hover {
+        @apply bg-customPurple/10;
+    }
+
+    .select-value {
+        @apply text-customLightGray;
+    }
+
+    .select-menu {
+        @apply bg-customDarkPurple border-2 border-customPurpleOutline/30 rounded-xl overflow-hidden;
+    }
+
+    .select-dropdown {
+        @apply text-customPurple hover:text-customPurple;
+    }
+
+    .select-input {
+        @apply text-customLightGray;
     }
 }
