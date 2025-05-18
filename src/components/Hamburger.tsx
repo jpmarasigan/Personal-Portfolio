@@ -90,15 +90,16 @@ const Hamburger: React.FC<HamburgerProps> = ({ isVisible, scrolling, lastScrollY
             <div className={`overlay ${isActive ? "active" : ""}`}>
                 <div ref={overlayRef} className={`menu ${isActive ? "active" : ""}`}>
                     <ul>
-                        <li><a href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
-                        <div className="nav-divider"></div>
-                        <li><a href="#services" onClick={(e) => handleNavClick(e, 'services')}>Services</a></li>
-                        <div className="nav-divider"></div>
-                        <li><a href="#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')}>Portfolio</a></li>
-                        <div className="nav-divider"></div>
-                        <li><a href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</a></li>
-                        <div className="nav-divider"></div>
-                        <li><a href="#" onClick={(e) => handleNavClick(e, 'home')}>Contact</a></li>
+                        {['Home', 'Services', 'Portfolio', 'Skills', 'Contact'].map(nav => (
+                            <li>
+                                <a 
+                                    href={`#${nav.toLowerCase()}`}
+                                    onClick={(e) => handleNavClick(e, nav.toLowerCase())}
+                                >
+                                    {nav}
+                                </a>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>
