@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+    /* * {
+        outline: 1px solid red;
+    } */
     .home-section {       
         @apply mx-auto max-w-[85rem] max-h-[45rem];
         @apply max-1024:h-[40rem];
@@ -15,7 +18,7 @@
 
     .profile-container {
         @apply flex max-600:h-fit min-1024:relative max-1024:flex-row-reverse items-center h-[28rem] w-full mx-auto mt-12;
-        @apply overflow-hidden;
+        /* @apply overflow-hidden;      causing disrupted design of hero profile */
     }
     
     .profile-image-container {
