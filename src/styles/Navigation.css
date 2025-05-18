@@ -24,12 +24,16 @@
 
     .download-button::before {
         @apply absolute top-0 left-0 w-full h-full backdrop-saturate-200 translate-y-full;
-        @apply transition-transform duration-100;
+        @apply transition-all duration-100;
         content: ""
     }
 
     .download-button:hover::before {
         @apply translate-y-0;
+    }
+
+    .download-button:active {
+        @apply scale-95 origin-center;
     }
 
     @media (max-width: 800px) {
