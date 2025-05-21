@@ -101,6 +101,13 @@ const Hamburger: React.FC<HamburgerProps> = ({ isVisible, scrolling, lastScrollY
                             </li>
                         ))}
                     </ul>
+                    <a 
+                        href="/images/resume/resume.pdf" 
+                        download="Resume-Marasigan_John_Patrick.pdf" 
+                        className="resume-button"
+                    >
+                        My Resume
+                    </a>
                 </div>
             </div>
         </div>

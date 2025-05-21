@@ -58,7 +58,7 @@
     }
 
     .overlay {
-        @apply absolute top-0 -right-full w-full h-[100vh];
+        @apply absolute top-0 -right-full w-full h-[102vh];
         z-index: 996;
         background-color: rgba(0, 0, 0, 0.7);
         transition: all 0.1s ease;
@@ -70,14 +70,26 @@
 
     .menu {
         @apply absolute -right-full w-[70%] h-full rounded-tl-xl rounded-bl-xl pt-32 pr-8 pl-4;
+        @apply flex flex-col justify-between;
         background-color: #090518;
         transition: all 0.3s ease;
         z-index: 997;
         box-shadow: -1px 0 1px -0.5px var(--custom-white-color);
     }
 
+        
+    .resume-button {
+        @apply py-4 px-8 mb-16 ml-1 rounded-xl text-customWhite text-md font-medium;
+        background: radial-gradient(circle at top, #804AEC, #422779);
+        @apply transition-all scale-100 self-center;
+    }
+
+    .resume-button:active {
+        @apply scale-95;
+    }
+    
     .menu.active {
-            @apply top-0 right-0;
+        @apply top-0 right-0;
     }
 
     .menu ul {
