@@ -4,7 +4,7 @@
 
 @layer components {
     .portfolio-section {
-        @apply mx-auto h-fit max-w-[85rem] p-12;
+        @apply mx-auto h-fit max-w-[85rem] p-12 overflow-hidden;
     }
     
     .portfolio-container, .portfolio-showcase {
