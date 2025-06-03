@@ -1,5 +1,8 @@
 import '../styles/Contact.css';
 import Select, { StylesConfig, ControlProps, CSSObjectWithLabel } from 'react-select';
+import StatusModal, { StatusModalProps } from '../components/StatusModal';
+import emailjs from 'emailjs-com'
+import { useState } from 'react';
 
 const countryOptions = [
     { value: '+63', label: '🇵🇭 +63' },
@@ -26,6 +29,8 @@ const engagementSections = [
 ]
 
 const ContactForm = () => {
+    const [modal, setModal] = useState<StatusModalProps | null>(null);
+
     const customStyles: StylesConfig = {
         control: (base: CSSObjectWithLabel, state: ControlProps) => ({
             ...base,
@@ -74,16 +79,49 @@ const ContactForm = () => {
         })
     };
 
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const form = e.currentTarget;
+        const formData = new FormData(e.currentTarget); 
+        let templateParams = {
+            name: `${formData.get('firstname')} ${formData.get('lastname')}`,
+            email: formData.get("email"),
+            phone: formData.get("phone"),
+            message: formData.get("message")
+        };
+
+        // Set the EmailJS API keys
+        emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY!);
+        emailjs.send(process.env.REACT_APP_EMAILJS_SERVICE_ID!, process.env.REACT_APP_EMAILJS_TEMPLATE_ID!, templateParams).then(
+            (response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                form.reset();      // Clear all input fields
+                setModal({
+                    status: 'success',
+                    message: 'Email sent successfully!'
+                });
+            },
+            (error) => {
+                console.log('FAILED...', error);
+                setModal({
+                    status: 'error',
+                    message: 'Failed to send email. Please check your input and try again'
+                });
+            },
+        );
+    }
+
     return (
         <div className="contact-form-container">
             <h3 className="text-left">Get In Touch</h3>
             <p className="text-left">You can reach me anytime</p>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="form-name-container">
-                    <input type="text" id="firstname" name="firstname" placeholder="First Name" className="form-input" />
-                    <input type="text" id="lastname" name="lastname" placeholder="Last Name" className="form-input" />
+                    <input type="text" id="firstname" name="firstname" placeholder="First Name" className="form-input" required />
+                    <input type="text" id="lastname" name="lastname" placeholder="Last Name" className="form-input" required />
                 </div>
-                <input type="email" id="email" name="email" placeholder="Email" className="form-input"></input>
+                <input type="email" id="email" name="email" placeholder="Email" className="form-input" required />
 
                 <div className="flex">
                     <Select
@@ -95,11 +133,19 @@ const ContactForm = () => {
                             IndicatorSeparator: () => null
                         }}
                     />
-                    <input type="tel" placeholder="Phone number" className="form-input" />
+                    <input type="tel" id="phone" name="phone" placeholder="Phone number" className="form-input" required />
                 </div>
-                <textarea placeholder="Reach Out, I'd Love to Hear From You!" className="form-textarea"></textarea>
+                <textarea id="message" name="message" placeholder="Reach Out, I'd Love to Hear From You!" className="form-textarea" required />
                 <button type="submit" className="form-submit">Submit</button>
             </form>
+
+            {modal && (
+                <StatusModal 
+                    key={Date.now()}
+                    status={modal.status}
+                    message={modal.message}
+                />
+            )};
         </div>
     )
 }
