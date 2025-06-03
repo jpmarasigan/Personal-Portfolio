@@ -17,7 +17,6 @@ const SkillShowcase = () => {
     return (
         <div className="tech-stack-container"> 
             {techStack.map((skill: TechStack) => { // Explicitly type 'skill' as 'TechStack'
-                console.log(skill.id);
                 return (
                     <motion.div 
                         key={`${skill.id}-${skill.animateDirection}-${skill.value}`} 
