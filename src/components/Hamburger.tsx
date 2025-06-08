@@ -90,8 +90,8 @@ const Hamburger: React.FC<HamburgerProps> = ({ isVisible, scrolling, lastScrollY
             <div className={`overlay ${isActive ? "active" : ""}`}>
                 <div ref={overlayRef} className={`menu ${isActive ? "active" : ""}`}>
                     <ul>
-                        {['Home', 'Services', 'Portfolio', 'Skills', 'Contact'].map(nav => (
-                            <li>
+                        {['Home', 'Services', 'Portfolio', 'Skills', 'Contact'].map((nav, index) => (
+                            <li key={index}>
                                 <a 
                                     href={`#${nav.toLowerCase()}`}
                                     onClick={(e) => handleNavClick(e, nav.toLowerCase())}
