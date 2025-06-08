@@ -189,8 +189,8 @@ const ContactInfo = () => {
 const ContactTitle = () => {
     return (
         <div className="title-container">
-            <h3>CONTACT ME <span className="text-md font-robotoCondensed">(in progress)</span></h3>
-            <p>You can reach me by email, phone, or by filling out the form below. I’m happy to answer any questions.</p>
+            <h3>CONTACT ME</h3>
+            <p>You can reach me by email, phone, or by filling out the form below.</p>
         </div>
     )
 }

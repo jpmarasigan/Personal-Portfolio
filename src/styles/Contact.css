@@ -4,13 +4,14 @@
 
 @layer components {
     .contact-section {
-        @apply mx-auto h-fit max-w-[85rem] p-12;
-        @apply xl:p-4
+        @apply mx-auto h-fit max-w-[85rem] py-12 px-4 pb-20;
+        @apply md:px-12 xl:px-4;
     }
 
     .contact-container {
         @apply h-full w-full;
         @apply grid md:grid-cols-1 xl:grid-cols-[minmax(0,_60%)_minmax(0,_40%)] gap-16;
+        outline: 1px solid green;
     }
 
     .contact-container .title-container {
@@ -35,9 +36,9 @@
     }
 
     .contact-container .contact-info-container {
-        @apply flex justify-around w-[100%] mx-auto mb-12 gap-2 opacity-85;
+        @apply flex justify-around w-[100%] mx-auto my-12 gap-2 opacity-85;
         @apply xl:flex-col xl:w-[60%] xl:mx-0 xl:gap-4;
-        @apply max-800:flex-col max-800:items-center;
+        @apply max-800:flex-col max-800:items-center xl:mt-0;
     }
 
     .contact-container .contact-info-container p {
@@ -54,8 +55,8 @@
     }
 
     .contact-container .engagement-container > div > p:nth-child(2) {
-        @apply mx-auto w-[80%] mt-[-10px] leading-6;
-        @apply xl:w-full;
+        @apply mx-auto w-full mt-[-10px] leading-6;
+        @apply sm:w-[80%] xl:w-full;
     }
 
     .contact-container .engagement-container > div > p:first-child {

@@ -23,7 +23,7 @@
 
     .development-container {
         @apply flex flex-wrap h-fit w-full justify-evenly;
-        @apply max-800:p-4;
+        @apply p-4;
     }
 
     .development {

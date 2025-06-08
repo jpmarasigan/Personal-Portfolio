@@ -4,7 +4,9 @@
 
 @layer components {
     .skills-section {
-        @apply w-full h-full max-w-[85rem] mx-auto p-12 pb-20 z-50;
+        @apply w-full h-full max-w-[85rem] mx-auto py-12 px-4 pb-20 z-50;
+        @apply md:px-12;
+        outline: 1px solid red;
     }
 
     .skills-container {
