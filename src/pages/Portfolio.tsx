@@ -49,15 +49,36 @@ const mycertificates = [
         title: "Meta Advanced React",
         summary: "I gained in-depth knowledge of advanced React concepts, such as advanced and custom hooks, context API, and performance optimization strategies. This certification highlights my ability to build efficient and scalable React applications using modern development practices.",
         image: "images/certificates/meta-advanced-react.png",
-        url: "https://www.coursera.org/account/accomplishments/verify/WC22QAS4G964"
+        url: "https://www.coursera.org/account/accomplishments/records/WC22QAS4G964"
     },
     {
         id: "cert2",
+        title: "Meta Django Framework",
+        summary: "I gained hands-on experience in building dynamic web applications using Django, working with essential components such as models, views, and templates. This certification highlights my knowledge of Django's core features, including template inheritance, user authentication, and access control.",
+        image: "images/certificates/meta-django-framework.png",
+        url: "https://www.coursera.org/account/accomplishments/records/HQ80NHYZ54BG",
+    },
+    {
+        id: "cert3",
         title: "Responsive Web Design",
         summary: "I gained hands-on experience in HTML, CSS, and media queries, ensuring optimal viewing across devices from desktops to mobile phones. This certification highlights my knowledge of mobile-first design principles, flexbox, and CSS grid layout.",
         image: "images/certificates/responsive-web-design.png",
         url: "https://www.freecodecamp.org/certification/jay_peez/responsive-web-design",
     },
+    {
+        id: "cert4",
+        title: "Introduction to Front-End Development",
+        summary: "I gained hands-on experience in HTML and Bootstrap, enabling me to create responsive and visually appealing web pages. This certification highlights my understanding of foundational front-end technologies essential for building user-friendly interfaces.",
+        image: "images/certificates/meta-introduction-to-front-end.png",
+        url: "https://www.coursera.org/account/accomplishments/records/3HOXL82Z2F6B",
+    },
+    {
+        id: "cert5",
+        title: "Introduction to Python",
+        summary: "I gained hands-on experience in writing Python programs, working with data types, control structures, functions, and basic data structures like lists and dictionaries. This certification highlights my foundational understanding of Python programming.",
+        image: "images/certificates/datacamp-introduction-to-python.png",
+        url: "https://www.datacamp.com/completed/statement-of-accomplishment/course/5d134d09e3068b21033d887cffbe7dcf23536990",
+    }
 ]
 
 type ContentType = {
