@@ -3,7 +3,7 @@
 ## Overview
 This is my personal portfolio website built using React.
 
-👉 **[View Live Website](https://jaypdev.vercel.app/)**
+👉 <a href="https://jaypdev.vercel.app/" target="_blank" rel="noopener noreferrer"><strong>View Live Website</strong></a>
 
 ## Features
 * Interactive and responsive design
