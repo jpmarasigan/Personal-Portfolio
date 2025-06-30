@@ -1,7 +1,7 @@
 # Personal Portfolio React
 
 ## Overview
-This is my personal portfolio website built using React. It showcases my projects, skills, experience, and contact information in a clean and responsive layout.
+This is my personal portfolio website built using React.
 
 👉 **[View Live Website](https://jaypdev.vercel.app/)**
 
