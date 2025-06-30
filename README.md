@@ -12,9 +12,6 @@ This is my personal portfolio website built using React. It showcases my project
 * Skills
 * Contacts
 
-## Tutorial Installation of TailwindCSS
-https://tailwindcss.com/docs/installation
-
 ## Technologies Used
 * HTML, TailwindCSS
 * Python
