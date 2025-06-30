@@ -13,9 +13,7 @@ This is my personal portfolio website built using React. It showcases my project
 * Contacts
 
 ## Technologies Used
-* HTML, TailwindCSS
-* Python
-* Flask
-* NLTK (Natural Language Toolkit)
-* Youtube API
+* React
+* TailwindCSS
+* Vercel
 
