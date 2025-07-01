@@ -56,21 +56,21 @@ const DevelopmentField = () => {
                     className="development-title" 
                     variants={ descSpringVariant }
                 >
-                    Front-end Web Development
+                    Web Development
                 </motion.h3>
                 <motion.span
                     variants={ descSpringVariant }
                 >
-                    HTML, CSS, JavaScript, TailwindCSS
+                    HTML, CSS, JavaScript, React, TailwindCSS
                 </motion.span>
                 <motion.p 
                     variants={ descSpringVariant }
                 >
-                    I have developed responsive websites using HTML, CSS, JavaScript,
-                    and TailwindCSS through various school projects. My experience includes
-                    creating user-friendly interfaces and ensuring compatibility across
-                    different devices. I enjoy applying best practices in web development 
-                    and bringing creative designs to life.
+                    I have developed responsive websites through various academic and 
+                    personal projects. My experience includes creating user-friendly 
+                    interfaces and ensuring compatibility across different devices. I enjoy 
+                    applying best practices in web development and bringing creative designs 
+                    to life.
                 </motion.p>
             </motion.div>
             
@@ -85,20 +85,20 @@ const DevelopmentField = () => {
                     className="development-title" 
                     variants={ descSpringVariant }
                 >
-                    Back-end Web Development
+                    Back-end Development
                 </motion.h3>
                 <motion.span
                     variants={ descSpringVariant }
                 >
-                    Python, PHP, SQL, XAMPP, MariaDB, Firebase
+                    Python, Flask, Django, PHP, SQL, RDBMS
                 </motion.span>
                 <motion.p
                     variants={ descSpringVariant }
                 >
-                    I have hands-on experience gained through school projects and
-                    personal learning. I focus on creating functional server-side
-                    applications such as managing databases, and connecting back-end
-                    systems to the front-end.
+                    I develop functional server-side applications using Python frameworks 
+                    (Flask, Django) from school projects and certifications. My expertise 
+                    includes back-end development, ML/DL model integration, ORMs, server-side 
+                    logic, and database management for web applications.
                 </motion.p>
             </motion.div>
             
@@ -112,20 +112,20 @@ const DevelopmentField = () => {
                 <motion.h3
                     variants={ descSpringVariant }
                 >
-                    Python Development
+                    Cloud Computing
                 </motion.h3>
                 <motion.span
                     variants={ descSpringVariant }
                 >
-                    Python, Flask, PyGame
+                    AWS, GCP
                 </motion.span>
                 <motion.p
                     variants={ descSpringVariant }
                 >
-                    I have worked with Python and Flask through school projects,
-                    developing back-end functionality and integrating ML/DL model to
-                    web applications. My experience includes handling server-side logic,
-                    utilizing models, and integrating databases.
+                    I have hands-on experience deploying dynamic web applications using AWS 
+                    EC2 and RDS, and deploying React application with AWS Amplify. On GCP, 
+                    I've leveraged Cloud Functions for server-side automation and Cloud Storage 
+                    for data management.
                 </motion.p>
             </motion.div>
         </motion.div>
