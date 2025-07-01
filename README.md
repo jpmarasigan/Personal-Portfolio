@@ -10,7 +10,7 @@ This is my personal portfolio website built using React.
 * Expertise
 * Project showcase with links and descriptions
 * Skills
-* Contacts
+* Contact
 
 ## Technologies Used
 * React
