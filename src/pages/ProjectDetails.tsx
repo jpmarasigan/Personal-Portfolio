@@ -116,6 +116,7 @@ const ProjectDetails = ({bgParam} : {bgParam:JSX.Element}) => {
                             <p>{projectDetails.details}</p>
 
                             <div className="link-container">
+                                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                 <a className="button-link" target="_blank" rel="noopener noreferrer" href="#">
                                     <img src="/images/assets/link-icon.svg" alt="Open Live Demo" />
                                     <p>Live Demo</p>

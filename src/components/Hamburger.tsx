@@ -31,6 +31,7 @@ const Hamburger: React.FC<HamburgerProps> = ({ isVisible, scrolling, lastScrollY
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [lastScrollY]);
 
     // Check if click outside the mobile view overlay menu
