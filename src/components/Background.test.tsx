@@ -7,10 +7,10 @@ const minNumOfCircles = 4;
 
 describe('Background Component', () => {
     test('Display background', () => {
-        const { container } = render(<Background />);
+        render(<Background />);
 
-        const bgContainer = container.querySelector('.animated-background');
-        const bgCircles = container.querySelectorAll('.circles');
+        const bgContainer = screen.getByTestId('background');
+        const bgCircles = screen.getAllByTestId('circles');
 
         expect(bgContainer).toBeInTheDocument();
         expect(bgCircles.length).toBeGreaterThanOrEqual(minNumOfCircles);

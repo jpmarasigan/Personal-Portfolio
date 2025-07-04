@@ -13,18 +13,21 @@ describe('Hamburger Component', () => {
 
     beforeEach(() => {
         jest.clearAllMocks();
-        render(<Hamburger {...defaultProps} />);
     })
 
     test('Render hamburger component with default props', () => {
-        const hamburgerContainer = document.querySelector('.hamburger-container');
-        const navIcon = document.getElementById('nav-icon');
+        render(<Hamburger {...defaultProps} />);
+
+        const hamburgerContainer = screen.getByTestId('hamburger');
+        const hamburgerIcon = screen.getByTestId('hamburger-icon');
         
         expect(hamburgerContainer).toBeInTheDocument();
-        expect(navIcon).toBeInTheDocument();
+        expect(hamburgerIcon).toBeInTheDocument();
     })
 
     test('Display all navigations', () => {
+        render(<Hamburger {...defaultProps} />);
+
         const sections = ['home', 'services', 'portfolio', 'skills', 'contact'];
 
         sections.forEach(section => {
@@ -40,6 +43,8 @@ describe('Hamburger Component', () => {
     })
 
     test('Display Resume download button', () => {
+        render(<Hamburger {...defaultProps} />);
+
         const resumeButtons = screen.getAllByRole('link', { name: /my resume/i});
 
         resumeButtons.forEach(button => {

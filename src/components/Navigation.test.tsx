@@ -3,24 +3,22 @@ import '@testing-library/jest-dom';
 import Navigation from './Navigation';
 
 
-beforeEach(() => {
-    render(<Navigation />);
-})
-
 describe('Navigation Component', () => {
     test('Render navigation main component', () => {
+        render(<Navigation />);
         // const allLinks = screen.getAllByRole('link');
         // console.log('All links found: ', allLinks.map(link => ({
         //     text: link.textContent,
         //     href: link.getAttribute('href')
         // })));
 
-        const { container } = render(<Navigation />);
-        const navbar = container.querySelector('.navbar');
+        const navbar = screen.getByTestId('navbar');
         expect(navbar).toBeInTheDocument();
     })
 
     test('Display all navigations', () => {
+        render(<Navigation />);
+
         const sections = ['home', 'services', 'portfolio', 'skills', 'contact'];
 
         sections.forEach(section => {
@@ -36,6 +34,8 @@ describe('Navigation Component', () => {
     })
 
     test('Display Resume download button', () => {
+        render(<Navigation />);
+        
         const resumeButtons = screen.getAllByRole('link', { name: /my resume/i});
 
         resumeButtons.forEach(button => {
