@@ -46,6 +46,8 @@ describe('Navigation Component', () => {
     })
 
     test('Renders arrow icon in Resume button', () => {
+        render(<Navigation />);
+        
         const arrowIcon = screen.getByAltText('Arrow Icon');
 
         expect(arrowIcon).toBeInTheDocument();
