@@ -79,6 +79,7 @@ const Navigation = () => {
             }
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            data-testid="navbar"
         >
             <div className="nav-container">
                 <div className="flex relative mx-[5rem] max-980:w-[90%] max-980:mx-auto max-1140:flex-initial items-center z-50">
