@@ -137,7 +137,7 @@ const content: ContentType = {
                     <p>{certificate.summary}</p>
                 </div>
                 <div className='nav'>
-                    <a className="nav-button" onClick={handleProjectClick} href={certificate.url} target="_blank">
+                    <a className="nav-button" onClick={handleProjectClick} href={certificate.url} target="_blank" rel="noopener noreferrer">
                         <p>View Certificate<span>&gt;</span></p>
                     </a>
                 </div>
