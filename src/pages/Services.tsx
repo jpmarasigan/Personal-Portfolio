@@ -1,4 +1,4 @@
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { titleVariant, descSpringVariant, customTweenVariant, containerTweenVariant } from '../hooks/useVariant';
 import '../styles/Services.css';
 

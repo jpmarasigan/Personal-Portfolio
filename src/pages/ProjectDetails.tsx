@@ -104,7 +104,7 @@ const ProjectDetails = ({bgParam} : {bgParam:JSX.Element}) => {
                 <div className="nav-col">
                     <div 
                         className="back-button" onClick={handleBackClick}>
-                        <img src="/images/assets/arrow-icon.svg" />
+                        <img src="/images/assets/arrow-icon.svg" alt="Return Arrow" />
                         <p>Back</p>
                     </div>
                 </div>
@@ -116,19 +116,19 @@ const ProjectDetails = ({bgParam} : {bgParam:JSX.Element}) => {
                             <p>{projectDetails.details}</p>
 
                             <div className="link-container">
-                                <a className="button-link">
-                                    <img src="/images/assets/link-icon.svg" />
+                                <a className="button-link" target="_blank" rel="noopener noreferrer" href="#">
+                                    <img src="/images/assets/link-icon.svg" alt="Open Live Demo" />
                                     <p>Live Demo</p>
                                 </a>
-                                <a href={projectDetails.githubLink} target="_blank" className="button-link">
-                                    <img src="/images/assets/github-icon.svg" />
+                                <a href={projectDetails.githubLink} target="_blank" rel="noopener noreferrer" className="button-link">
+                                    <img src="/images/assets/github-icon.svg" alt="Github" />
                                     <p>GitHub</p>
                                 </a>
                             </div>
 
                             <div className="technology-used-container">
                                 <div className="title">
-                                    <img src="/images/assets/technology-icon.svg" />
+                                    <img src="/images/assets/technology-icon.svg" alt="Technology Icon" />
                                     <p>Technologies Used</p>
                                 </div>
                                 <div className="technologies">
@@ -142,18 +142,18 @@ const ProjectDetails = ({bgParam} : {bgParam:JSX.Element}) => {
                         </div>
                         <div className="col col-2">
                             <div className="thumbnail-container">
-                                <img src={projectDetails.thumbnail} alt="project image" />
+                                <img src={projectDetails.thumbnail} alt="Project Icon" />
                             </div>
                             <div className="key-features-container">
                                 <div className="title">
-                                    <img src="/images/assets/link-icon.svg"/>
+                                    <img src="/images/assets/link-icon.svg" alt="Key Features Icon" />
                                     <h3>Key Features</h3>
                                 </div>
                                 <ul>
                                     {projectDetails.keyFeatures.map((feature, index) => {
                                         return (
                                             <div key={index} className="feature">
-                                                <img src="/images/assets/star-icon.svg" alt="star icon" />
+                                                <img src="/images/assets/star-icon.svg" alt="Star Icon" />
                                                 <li key={index}>{feature}</li> 
                                             </div>  
                                         )

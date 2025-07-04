@@ -78,10 +78,12 @@ const Hamburger: React.FC<HamburgerProps> = ({ isVisible, scrolling, lastScrollY
             ${scrolling ? "scrolled" : ""}
             ${isVisible ? "translate-y-0" : "-translate-y-full"}`
         }
+            data-testid="hamburger"
         >
             <div ref={hamburgerRef} id="nav-icon" 
                 className={`${isActive ? "active" : ""}`} 
                 onClick={() => {setIsActive(!isActive)}}
+                data-testid = "hamburger-icon"
             >
                 <span className="w-10"></span>
                 <span className="w-10"></span>
