@@ -1,0 +1,23 @@
+
+# Dependencies
+node_modules
+
+# Build 
+build
+
+# Environment & Config
+.env
+
+# GitHub Actions & CI/CD
+.github/
+.gitignore
+.git/
+
+# IDE & Editor
+.vscode/
+
+# Logs
+*.log
+
+# Docker
+Dockerfile
