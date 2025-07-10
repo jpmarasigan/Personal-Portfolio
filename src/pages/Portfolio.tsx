@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { titleVariant, customSpringVariant } from '../hooks/useVariant';
@@ -87,7 +87,7 @@ type ContentType = {
 };
 
 const handleProjectClick = () => {
-    sessionStorage.setItem("scrollPosition", window.scrollY.toString());
+    sessionStorage.setItem("currentScrollPosition", window.scrollY.toString());
 }
 
 const content: ContentType = {
@@ -149,10 +149,14 @@ const content: ContentType = {
 const PortfolioShowcase = () => {
     const [activeContent, setActiveContent] = useState<keyof ContentType>('projects');  
     
-    // useEffect(() => {
-    //     const savedPosition = sessionStorage.getItem("scrollPosition");
-    //     if (savedPosition) { window.scroll(0, parseInt(savedPosition, 10))};
-    // })
+    useEffect(() => {
+        const savedScrollPosition = sessionStorage.getItem('currentScrollPosition');
+
+        if (savedScrollPosition) {
+            window.scrollTo(0, parseInt(savedScrollPosition, 10));
+            sessionStorage.removeItem('currentScrollPosition');
+        }
+    }, []);
 
     return (
         <div className='portfolio-showcase'>
@@ -215,6 +219,8 @@ const PortfolioTitle = () => {
 }
 
 const Portfolio = () => {
+
+
     return (
         <div id="portfolio" className="portfolio-section">
             <div className="portfolio-container">

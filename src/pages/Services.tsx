@@ -15,7 +15,7 @@ const Statistics = () => {
                 viewport={{ once: true }}
                 variants={ customTweenVariant("x", 100, 0.5) }
             >
-                <span>03</span> years of experience
+                <span>00</span> years of experience
             </motion.div>
             <motion.div 
                 className="stats"
