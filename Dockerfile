@@ -14,8 +14,6 @@ COPY . .
 # bUILD THE images
 RUN npm run build
 
-
-
 # Stage 2: Run with Apache Server
 FROM httpd:2.4
 
